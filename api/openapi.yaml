@@ -1,0 +1,1027 @@
+openapi: 3.0.1
+info:
+  contact:
+    email: info@gemini-commerce.com
+    name: Gemini Team
+  license:
+    name: Gemini fair use license
+    url: https://gemini-commerce.com/api/fair-use-license
+  title: Dam Service
+  version: 1.0.0
+servers:
+- url: https://dam.api.gogemini.io/
+security:
+- Authorization: []
+tags:
+- description: Search Description
+  externalDocs:
+    url: https://gemini-commerce.com/api/dam
+  name: Dam
+paths:
+  /dam.Dam/BatchUploadAssets:
+    post:
+      operationId: BatchUploadAssets
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/damBatchUploadAssetsRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/damBatchUploadAssetsResponse'
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: "When an endpoint receives a request with an invalid or unauthorized\
+            \ JWT token, a 401 error (Unauthorized) is thrown. This error indicates\
+            \ that the client is not authenticated or lacks the necessary permissions\
+            \ to access the requested resource. The server responds with the 401 error\
+            \ to enforce security measures and restrict unauthorized access. Clients\
+            \ should handle this error by taking appropriate actions, such as re-authenticating\
+            \ or obtaining a valid token, to gain authorized access."
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: Batch Upload Assets
+      tags:
+      - Basic Operations
+      x-codegen-request-body-name: body
+  /dam.Dam/CreateAsset:
+    post:
+      operationId: CreateAsset
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/damCreateAssetRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/damAsset'
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: "When an endpoint receives a request with an invalid or unauthorized\
+            \ JWT token, a 401 error (Unauthorized) is thrown. This error indicates\
+            \ that the client is not authenticated or lacks the necessary permissions\
+            \ to access the requested resource. The server responds with the 401 error\
+            \ to enforce security measures and restrict unauthorized access. Clients\
+            \ should handle this error by taking appropriate actions, such as re-authenticating\
+            \ or obtaining a valid token, to gain authorized access."
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: Create Asset
+      tags:
+      - Basic Operations
+      x-codegen-request-body-name: body
+  /dam.Dam/GetAssetByCode:
+    post:
+      operationId: GetAssetByCode
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/damGetAssetByCodeRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/damAsset'
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: "When an endpoint receives a request with an invalid or unauthorized\
+            \ JWT token, a 401 error (Unauthorized) is thrown. This error indicates\
+            \ that the client is not authenticated or lacks the necessary permissions\
+            \ to access the requested resource. The server responds with the 401 error\
+            \ to enforce security measures and restrict unauthorized access. Clients\
+            \ should handle this error by taking appropriate actions, such as re-authenticating\
+            \ or obtaining a valid token, to gain authorized access."
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: Get Asset By Code
+      tags:
+      - Basic Operations
+      x-codegen-request-body-name: body
+  /dam.Dam/ListAssets:
+    post:
+      operationId: ListAssets
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/damListAssetsRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/damListAssetsResponse'
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: "When an endpoint receives a request with an invalid or unauthorized\
+            \ JWT token, a 401 error (Unauthorized) is thrown. This error indicates\
+            \ that the client is not authenticated or lacks the necessary permissions\
+            \ to access the requested resource. The server responds with the 401 error\
+            \ to enforce security measures and restrict unauthorized access. Clients\
+            \ should handle this error by taking appropriate actions, such as re-authenticating\
+            \ or obtaining a valid token, to gain authorized access."
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: List Assets
+      tags:
+      - Basic Operations
+      x-codegen-request-body-name: body
+  /dam.Dam/ListAssetsByCodes:
+    post:
+      operationId: ListAssetsByCodes
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/damListAssetsByCodesRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/damListAssetsByCodesResponse'
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: "When an endpoint receives a request with an invalid or unauthorized\
+            \ JWT token, a 401 error (Unauthorized) is thrown. This error indicates\
+            \ that the client is not authenticated or lacks the necessary permissions\
+            \ to access the requested resource. The server responds with the 401 error\
+            \ to enforce security measures and restrict unauthorized access. Clients\
+            \ should handle this error by taking appropriate actions, such as re-authenticating\
+            \ or obtaining a valid token, to gain authorized access."
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: List Assets By Codes
+      tags:
+      - Basic Operations
+      x-codegen-request-body-name: body
+  /dam.Dam/ListAssetsByIds:
+    post:
+      operationId: ListAssetsByIds
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/damListAssetsByIdsRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/damListAssetsByIdsResponse'
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: "When an endpoint receives a request with an invalid or unauthorized\
+            \ JWT token, a 401 error (Unauthorized) is thrown. This error indicates\
+            \ that the client is not authenticated or lacks the necessary permissions\
+            \ to access the requested resource. The server responds with the 401 error\
+            \ to enforce security measures and restrict unauthorized access. Clients\
+            \ should handle this error by taking appropriate actions, such as re-authenticating\
+            \ or obtaining a valid token, to gain authorized access."
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: List Assets By Ids
+      tags:
+      - Basic Operations
+      x-codegen-request-body-name: body
+  /dam.Dam/UpdateAsset:
+    post:
+      operationId: UpdateAsset
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/damUpdateAssetRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/damAsset'
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: "When an endpoint receives a request with an invalid or unauthorized\
+            \ JWT token, a 401 error (Unauthorized) is thrown. This error indicates\
+            \ that the client is not authenticated or lacks the necessary permissions\
+            \ to access the requested resource. The server responds with the 401 error\
+            \ to enforce security measures and restrict unauthorized access. Clients\
+            \ should handle this error by taking appropriate actions, such as re-authenticating\
+            \ or obtaining a valid token, to gain authorized access."
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: Update Asset
+      tags:
+      - Basic Operations
+      x-codegen-request-body-name: body
+  /dam/batch_upload_assets:
+    post:
+      operationId: BatchUploadAssets
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/damBatchUploadAssetsRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/damBatchUploadAssetsResponse'
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: "When an endpoint receives a request with an invalid or unauthorized\
+            \ JWT token, a 401 error (Unauthorized) is thrown. This error indicates\
+            \ that the client is not authenticated or lacks the necessary permissions\
+            \ to access the requested resource. The server responds with the 401 error\
+            \ to enforce security measures and restrict unauthorized access. Clients\
+            \ should handle this error by taking appropriate actions, such as re-authenticating\
+            \ or obtaining a valid token, to gain authorized access."
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: Batch Upload Assets
+      tags:
+      - Basic Operations
+      x-codegen-request-body-name: body
+  /dam/create_asset:
+    post:
+      operationId: CreateAsset
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/damCreateAssetRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/damAsset'
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: "When an endpoint receives a request with an invalid or unauthorized\
+            \ JWT token, a 401 error (Unauthorized) is thrown. This error indicates\
+            \ that the client is not authenticated or lacks the necessary permissions\
+            \ to access the requested resource. The server responds with the 401 error\
+            \ to enforce security measures and restrict unauthorized access. Clients\
+            \ should handle this error by taking appropriate actions, such as re-authenticating\
+            \ or obtaining a valid token, to gain authorized access."
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: Create Asset
+      tags:
+      - Basic Operations
+      x-codegen-request-body-name: body
+  /dam/get_asset_by_code:
+    post:
+      operationId: GetAssetByCode
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/damGetAssetByCodeRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/damAsset'
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: "When an endpoint receives a request with an invalid or unauthorized\
+            \ JWT token, a 401 error (Unauthorized) is thrown. This error indicates\
+            \ that the client is not authenticated or lacks the necessary permissions\
+            \ to access the requested resource. The server responds with the 401 error\
+            \ to enforce security measures and restrict unauthorized access. Clients\
+            \ should handle this error by taking appropriate actions, such as re-authenticating\
+            \ or obtaining a valid token, to gain authorized access."
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: Get Asset By Code
+      tags:
+      - Basic Operations
+      x-codegen-request-body-name: body
+  /dam/list_assets:
+    post:
+      operationId: ListAssets
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/damListAssetsRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/damListAssetsResponse'
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: "When an endpoint receives a request with an invalid or unauthorized\
+            \ JWT token, a 401 error (Unauthorized) is thrown. This error indicates\
+            \ that the client is not authenticated or lacks the necessary permissions\
+            \ to access the requested resource. The server responds with the 401 error\
+            \ to enforce security measures and restrict unauthorized access. Clients\
+            \ should handle this error by taking appropriate actions, such as re-authenticating\
+            \ or obtaining a valid token, to gain authorized access."
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: List Assets
+      tags:
+      - Basic Operations
+      x-codegen-request-body-name: body
+  /dam/list_assets_by_codes:
+    post:
+      operationId: ListAssetsByCodes
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/damListAssetsByCodesRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/damListAssetsByCodesResponse'
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: "When an endpoint receives a request with an invalid or unauthorized\
+            \ JWT token, a 401 error (Unauthorized) is thrown. This error indicates\
+            \ that the client is not authenticated or lacks the necessary permissions\
+            \ to access the requested resource. The server responds with the 401 error\
+            \ to enforce security measures and restrict unauthorized access. Clients\
+            \ should handle this error by taking appropriate actions, such as re-authenticating\
+            \ or obtaining a valid token, to gain authorized access."
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: List Assets By Codes
+      tags:
+      - Basic Operations
+      x-codegen-request-body-name: body
+  /dam/list_assets_by_ids:
+    post:
+      operationId: ListAssetsByIds
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/damListAssetsByIdsRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/damListAssetsByIdsResponse'
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: "When an endpoint receives a request with an invalid or unauthorized\
+            \ JWT token, a 401 error (Unauthorized) is thrown. This error indicates\
+            \ that the client is not authenticated or lacks the necessary permissions\
+            \ to access the requested resource. The server responds with the 401 error\
+            \ to enforce security measures and restrict unauthorized access. Clients\
+            \ should handle this error by taking appropriate actions, such as re-authenticating\
+            \ or obtaining a valid token, to gain authorized access."
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: List Assets By Ids
+      tags:
+      - Basic Operations
+      x-codegen-request-body-name: body
+  /dam/update_asset:
+    post:
+      operationId: UpdateAsset
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/damUpdateAssetRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/damAsset'
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: "When an endpoint receives a request with an invalid or unauthorized\
+            \ JWT token, a 401 error (Unauthorized) is thrown. This error indicates\
+            \ that the client is not authenticated or lacks the necessary permissions\
+            \ to access the requested resource. The server responds with the 401 error\
+            \ to enforce security measures and restrict unauthorized access. Clients\
+            \ should handle this error by taking appropriate actions, such as re-authenticating\
+            \ or obtaining a valid token, to gain authorized access."
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: Update Asset
+      tags:
+      - Basic Operations
+      x-codegen-request-body-name: body
+components:
+  schemas:
+    AssetMetadata:
+      example:
+        value: value
+        key: key
+      properties:
+        key:
+          type: string
+        value:
+          type: string
+      type: object
+    AssetOriginTypes:
+      default: EXTERNAL
+      enum:
+      - EXTERNAL
+      - S3
+      type: string
+    BatchUploadAssetsRequestFiles:
+      properties:
+        filename:
+          type: string
+        size:
+          type: string
+        mimeType:
+          type: string
+      required:
+      - filename
+      - mimeType
+      - size
+      type: object
+    UpdateAssetRequestPayload:
+      properties:
+        code:
+          type: string
+        origin:
+          $ref: '#/components/schemas/damAssetOrigin'
+        metadata:
+          items:
+            $ref: '#/components/schemas/AssetMetadata'
+          type: array
+      required:
+      - origin
+      type: object
+    damAsset:
+      example:
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        metadata:
+        - value: value
+          key: key
+        - value: value
+          key: key
+        grn: grn
+        code: code
+        publicUrl: publicUrl
+        id: id
+        type: null
+        updatedAt: 2000-01-23T04:56:07.000+00:00
+      properties:
+        createdAt:
+          format: date-time
+          readOnly: true
+          type: string
+        updatedAt:
+          format: date-time
+          readOnly: true
+          type: string
+        id:
+          type: string
+        type:
+          $ref: '#/components/schemas/damAssetType'
+        code:
+          title: "unique, not required"
+          type: string
+        metadata:
+          items:
+            $ref: '#/components/schemas/AssetMetadata'
+          type: array
+        grn:
+          type: string
+        publicUrl:
+          type: string
+      type: object
+    damAssetOrigin:
+      properties:
+        url:
+          type: string
+        type:
+          $ref: '#/components/schemas/AssetOriginTypes'
+      type: object
+    damAssetType:
+      default: UNKNOWN
+      enum:
+      - UNKNOWN
+      - IMAGE
+      - VIDEO
+      - VIDEO_EXTERNAL
+      - APPLICATION
+      type: string
+    damBatchUploadAssetsRequest:
+      properties:
+        tenantId:
+          type: string
+        files:
+          items:
+            $ref: '#/components/schemas/BatchUploadAssetsRequestFiles'
+          type: array
+      required:
+      - files
+      - tenantId
+      type: object
+    damBatchUploadAssetsResponse:
+      example:
+        preSignedUrls:
+        - preSignedUrls
+        - preSignedUrls
+      properties:
+        preSignedUrls:
+          items:
+            type: string
+          type: array
+      type: object
+    damCreateAssetRequest:
+      properties:
+        tenantId:
+          type: string
+        type:
+          $ref: '#/components/schemas/damAssetType'
+        code:
+          type: string
+        metadata:
+          items:
+            $ref: '#/components/schemas/AssetMetadata'
+          type: array
+        origin:
+          $ref: '#/components/schemas/damAssetOrigin'
+      required:
+      - code
+      - origin
+      - tenantId
+      - type
+      type: object
+    damGetAssetByCodeRequest:
+      properties:
+        tenantId:
+          type: string
+        code:
+          type: string
+      required:
+      - code
+      - tenantId
+      type: object
+    damListAssetsByCodesRequest:
+      properties:
+        tenantId:
+          type: string
+        codes:
+          items:
+            type: string
+          type: array
+      required:
+      - codes
+      - tenantId
+      type: object
+    damListAssetsByCodesResponse:
+      example:
+        assets:
+        - createdAt: 2000-01-23T04:56:07.000+00:00
+          metadata:
+          - value: value
+            key: key
+          - value: value
+            key: key
+          grn: grn
+          code: code
+          publicUrl: publicUrl
+          id: id
+          type: null
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+        - createdAt: 2000-01-23T04:56:07.000+00:00
+          metadata:
+          - value: value
+            key: key
+          - value: value
+            key: key
+          grn: grn
+          code: code
+          publicUrl: publicUrl
+          id: id
+          type: null
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+      properties:
+        assets:
+          items:
+            $ref: '#/components/schemas/damAsset'
+          type: array
+      type: object
+    damListAssetsByIdsRequest:
+      properties:
+        tenantId:
+          type: string
+        ids:
+          items:
+            type: string
+          type: array
+      required:
+      - ids
+      - tenantId
+      type: object
+    damListAssetsByIdsResponse:
+      example:
+        assets:
+        - createdAt: 2000-01-23T04:56:07.000+00:00
+          metadata:
+          - value: value
+            key: key
+          - value: value
+            key: key
+          grn: grn
+          code: code
+          publicUrl: publicUrl
+          id: id
+          type: null
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+        - createdAt: 2000-01-23T04:56:07.000+00:00
+          metadata:
+          - value: value
+            key: key
+          - value: value
+            key: key
+          grn: grn
+          code: code
+          publicUrl: publicUrl
+          id: id
+          type: null
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+      properties:
+        assets:
+          items:
+            $ref: '#/components/schemas/damAsset'
+          type: array
+      type: object
+    damListAssetsRequest:
+      properties:
+        tenantId:
+          type: string
+        pageSize:
+          description: |-
+            The maximum number of assets to return. The service may return fewer than
+            this value.
+            If unspecified, at most 10 assets will be returned.
+            The maximum value is 100; values above 100 will be coerced to 100.
+          format: int64
+          type: integer
+        pageToken:
+          description: |-
+            A page token, received from a previous `ListAssets` call.
+            Provide this to retrieve the subsequent page.
+
+
+            When paginating, all other parameters provided to `ListAssets` must match
+            the call that provided the page token.
+          type: string
+      required:
+      - tenantId
+      type: object
+    damListAssetsResponse:
+      example:
+        assets:
+        - createdAt: 2000-01-23T04:56:07.000+00:00
+          metadata:
+          - value: value
+            key: key
+          - value: value
+            key: key
+          grn: grn
+          code: code
+          publicUrl: publicUrl
+          id: id
+          type: null
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+        - createdAt: 2000-01-23T04:56:07.000+00:00
+          metadata:
+          - value: value
+            key: key
+          - value: value
+            key: key
+          grn: grn
+          code: code
+          publicUrl: publicUrl
+          id: id
+          type: null
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+        nextPageToken: nextPageToken
+      properties:
+        assets:
+          items:
+            $ref: '#/components/schemas/damAsset'
+          type: array
+        nextPageToken:
+          description: |-
+            A token that can be sent as `page_token` to retrieve the next page.
+            If this field is omitted, there are no subsequent pages.
+          type: string
+      type: object
+    damUpdateAssetRequest:
+      properties:
+        tenantId:
+          type: string
+        id:
+          type: string
+        payload:
+          $ref: '#/components/schemas/UpdateAssetRequestPayload'
+        payloadMask:
+          type: string
+      required:
+      - id
+      - tenantId
+      type: object
+    protobufAny:
+      additionalProperties:
+        type: object
+      properties:
+        '@type':
+          type: string
+      type: object
+    rpcStatus:
+      properties:
+        code:
+          format: int32
+          type: integer
+        message:
+          type: string
+        details:
+          items:
+            $ref: '#/components/schemas/protobufAny'
+          type: array
+      type: object
+  securitySchemes:
+    Authorization:
+      in: header
+      name: Authorization
+      type: apiKey
+    standardAuthorization:
+      flows:
+        implicit:
+          scopes: {}
+      type: oauth2
+x-original-swagger-version: "2.0"
