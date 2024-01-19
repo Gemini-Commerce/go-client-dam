@@ -75,11 +75,6 @@
         ],
         "tags": [
           "Basic Operations"
-        ],
-        "security": [
-          {
-            "standardAuthorization": []
-          }
         ]
       }
     },
@@ -125,11 +120,6 @@
         ],
         "tags": [
           "Basic Operations"
-        ],
-        "security": [
-          {
-            "standardAuthorization": []
-          }
         ]
       }
     },
@@ -175,11 +165,6 @@
         ],
         "tags": [
           "Basic Operations"
-        ],
-        "security": [
-          {
-            "standardAuthorization": []
-          }
         ]
       }
     },
@@ -225,11 +210,6 @@
         ],
         "tags": [
           "Basic Operations"
-        ],
-        "security": [
-          {
-            "standardAuthorization": []
-          }
         ]
       }
     },
@@ -275,11 +255,6 @@
         ],
         "tags": [
           "Basic Operations"
-        ],
-        "security": [
-          {
-            "standardAuthorization": []
-          }
         ]
       }
     },
@@ -325,11 +300,6 @@
         ],
         "tags": [
           "Basic Operations"
-        ],
-        "security": [
-          {
-            "standardAuthorization": []
-          }
         ]
       }
     },
@@ -375,11 +345,6 @@
         ],
         "tags": [
           "Basic Operations"
-        ],
-        "security": [
-          {
-            "standardAuthorization": []
-          }
         ]
       }
     },
@@ -425,11 +390,6 @@
         ],
         "tags": [
           "Basic Operations"
-        ],
-        "security": [
-          {
-            "standardAuthorization": []
-          }
         ]
       }
     },
@@ -475,11 +435,6 @@
         ],
         "tags": [
           "Basic Operations"
-        ],
-        "security": [
-          {
-            "standardAuthorization": []
-          }
         ]
       }
     },
@@ -525,11 +480,6 @@
         ],
         "tags": [
           "Basic Operations"
-        ],
-        "security": [
-          {
-            "standardAuthorization": []
-          }
         ]
       }
     },
@@ -575,11 +525,6 @@
         ],
         "tags": [
           "Basic Operations"
-        ],
-        "security": [
-          {
-            "standardAuthorization": []
-          }
         ]
       }
     },
@@ -625,11 +570,6 @@
         ],
         "tags": [
           "Basic Operations"
-        ],
-        "security": [
-          {
-            "standardAuthorization": []
-          }
         ]
       }
     },
@@ -675,11 +615,6 @@
         ],
         "tags": [
           "Basic Operations"
-        ],
-        "security": [
-          {
-            "standardAuthorization": []
-          }
         ]
       }
     },
@@ -725,11 +660,6 @@
         ],
         "tags": [
           "Basic Operations"
-        ],
-        "security": [
-          {
-            "standardAuthorization": []
-          }
         ]
       }
     }
