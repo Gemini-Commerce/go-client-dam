@@ -21,5 +21,4 @@ generate-go-client:
     --git-repo-id=go-client-${lower_service} \
     --skip-validate-spec \
 	--additional-properties ${artifact_version},enumClassPrefix=true,structPrefix=true,\
-
 	packageName="${lower_service}"
