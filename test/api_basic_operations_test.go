@@ -14,7 +14,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/gemini-commerce/go-client-dam"
+	openapiclient "github.com/Gemini-Commerce/go-client-dam"
 )
 
 func Test_dam_BasicOperationsAPIService(t *testing.T) {

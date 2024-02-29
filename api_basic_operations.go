@@ -23,18 +23,18 @@ import (
 // BasicOperationsAPIService BasicOperationsAPI service
 type BasicOperationsAPIService service
 
-type BasicOperationsAPIBatchUploadAssetsRequest struct {
+type ApiBatchUploadAssetsRequest struct {
 	ctx context.Context
 	ApiService *BasicOperationsAPIService
 	body *DamBatchUploadAssetsRequest
 }
 
-func (r BasicOperationsAPIBatchUploadAssetsRequest) Body(body DamBatchUploadAssetsRequest) BasicOperationsAPIBatchUploadAssetsRequest {
+func (r ApiBatchUploadAssetsRequest) Body(body DamBatchUploadAssetsRequest) ApiBatchUploadAssetsRequest {
 	r.body = &body
 	return r
 }
 
-func (r BasicOperationsAPIBatchUploadAssetsRequest) Execute() (*DamBatchUploadAssetsResponse, *http.Response, error) {
+func (r ApiBatchUploadAssetsRequest) Execute() (*DamBatchUploadAssetsResponse, *http.Response, error) {
 	return r.ApiService.BatchUploadAssetsExecute(r)
 }
 
@@ -42,10 +42,10 @@ func (r BasicOperationsAPIBatchUploadAssetsRequest) Execute() (*DamBatchUploadAs
 BatchUploadAssets Batch Upload Assets
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return BasicOperationsAPIBatchUploadAssetsRequest
+ @return ApiBatchUploadAssetsRequest
 */
-func (a *BasicOperationsAPIService) BatchUploadAssets(ctx context.Context) BasicOperationsAPIBatchUploadAssetsRequest {
-	return BasicOperationsAPIBatchUploadAssetsRequest{
+func (a *BasicOperationsAPIService) BatchUploadAssets(ctx context.Context) ApiBatchUploadAssetsRequest {
+	return ApiBatchUploadAssetsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -53,7 +53,7 @@ func (a *BasicOperationsAPIService) BatchUploadAssets(ctx context.Context) Basic
 
 // Execute executes the request
 //  @return DamBatchUploadAssetsResponse
-func (a *BasicOperationsAPIService) BatchUploadAssetsExecute(r BasicOperationsAPIBatchUploadAssetsRequest) (*DamBatchUploadAssetsResponse, *http.Response, error) {
+func (a *BasicOperationsAPIService) BatchUploadAssetsExecute(r ApiBatchUploadAssetsRequest) (*DamBatchUploadAssetsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -175,18 +175,18 @@ func (a *BasicOperationsAPIService) BatchUploadAssetsExecute(r BasicOperationsAP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type BasicOperationsAPIBatchUploadAssets_0Request struct {
+type ApiBatchUploadAssets_0Request struct {
 	ctx context.Context
 	ApiService *BasicOperationsAPIService
 	body *DamBatchUploadAssetsRequest
 }
 
-func (r BasicOperationsAPIBatchUploadAssets_0Request) Body(body DamBatchUploadAssetsRequest) BasicOperationsAPIBatchUploadAssets_0Request {
+func (r ApiBatchUploadAssets_0Request) Body(body DamBatchUploadAssetsRequest) ApiBatchUploadAssets_0Request {
 	r.body = &body
 	return r
 }
 
-func (r BasicOperationsAPIBatchUploadAssets_0Request) Execute() (*DamBatchUploadAssetsResponse, *http.Response, error) {
+func (r ApiBatchUploadAssets_0Request) Execute() (*DamBatchUploadAssetsResponse, *http.Response, error) {
 	return r.ApiService.BatchUploadAssets_1Execute(r)
 }
 
@@ -194,10 +194,10 @@ func (r BasicOperationsAPIBatchUploadAssets_0Request) Execute() (*DamBatchUpload
 BatchUploadAssets_0 Batch Upload Assets
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return BasicOperationsAPIBatchUploadAssets_0Request
+ @return ApiBatchUploadAssets_0Request
 */
-func (a *BasicOperationsAPIService) BatchUploadAssets_1(ctx context.Context) BasicOperationsAPIBatchUploadAssets_0Request {
-	return BasicOperationsAPIBatchUploadAssets_0Request{
+func (a *BasicOperationsAPIService) BatchUploadAssets_1(ctx context.Context) ApiBatchUploadAssets_0Request {
+	return ApiBatchUploadAssets_0Request{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -205,7 +205,7 @@ func (a *BasicOperationsAPIService) BatchUploadAssets_1(ctx context.Context) Bas
 
 // Execute executes the request
 //  @return DamBatchUploadAssetsResponse
-func (a *BasicOperationsAPIService) BatchUploadAssets_1Execute(r BasicOperationsAPIBatchUploadAssets_0Request) (*DamBatchUploadAssetsResponse, *http.Response, error) {
+func (a *BasicOperationsAPIService) BatchUploadAssets_1Execute(r ApiBatchUploadAssets_0Request) (*DamBatchUploadAssetsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -327,18 +327,18 @@ func (a *BasicOperationsAPIService) BatchUploadAssets_1Execute(r BasicOperations
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type BasicOperationsAPICreateAssetRequest struct {
+type ApiCreateAssetRequest struct {
 	ctx context.Context
 	ApiService *BasicOperationsAPIService
 	body *DamCreateAssetRequest
 }
 
-func (r BasicOperationsAPICreateAssetRequest) Body(body DamCreateAssetRequest) BasicOperationsAPICreateAssetRequest {
+func (r ApiCreateAssetRequest) Body(body DamCreateAssetRequest) ApiCreateAssetRequest {
 	r.body = &body
 	return r
 }
 
-func (r BasicOperationsAPICreateAssetRequest) Execute() (*DamAsset, *http.Response, error) {
+func (r ApiCreateAssetRequest) Execute() (*DamAsset, *http.Response, error) {
 	return r.ApiService.CreateAssetExecute(r)
 }
 
@@ -346,10 +346,10 @@ func (r BasicOperationsAPICreateAssetRequest) Execute() (*DamAsset, *http.Respon
 CreateAsset Create Asset
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return BasicOperationsAPICreateAssetRequest
+ @return ApiCreateAssetRequest
 */
-func (a *BasicOperationsAPIService) CreateAsset(ctx context.Context) BasicOperationsAPICreateAssetRequest {
-	return BasicOperationsAPICreateAssetRequest{
+func (a *BasicOperationsAPIService) CreateAsset(ctx context.Context) ApiCreateAssetRequest {
+	return ApiCreateAssetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -357,7 +357,7 @@ func (a *BasicOperationsAPIService) CreateAsset(ctx context.Context) BasicOperat
 
 // Execute executes the request
 //  @return DamAsset
-func (a *BasicOperationsAPIService) CreateAssetExecute(r BasicOperationsAPICreateAssetRequest) (*DamAsset, *http.Response, error) {
+func (a *BasicOperationsAPIService) CreateAssetExecute(r ApiCreateAssetRequest) (*DamAsset, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -479,18 +479,18 @@ func (a *BasicOperationsAPIService) CreateAssetExecute(r BasicOperationsAPICreat
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type BasicOperationsAPICreateAsset_0Request struct {
+type ApiCreateAsset_0Request struct {
 	ctx context.Context
 	ApiService *BasicOperationsAPIService
 	body *DamCreateAssetRequest
 }
 
-func (r BasicOperationsAPICreateAsset_0Request) Body(body DamCreateAssetRequest) BasicOperationsAPICreateAsset_0Request {
+func (r ApiCreateAsset_0Request) Body(body DamCreateAssetRequest) ApiCreateAsset_0Request {
 	r.body = &body
 	return r
 }
 
-func (r BasicOperationsAPICreateAsset_0Request) Execute() (*DamAsset, *http.Response, error) {
+func (r ApiCreateAsset_0Request) Execute() (*DamAsset, *http.Response, error) {
 	return r.ApiService.CreateAsset_2Execute(r)
 }
 
@@ -498,10 +498,10 @@ func (r BasicOperationsAPICreateAsset_0Request) Execute() (*DamAsset, *http.Resp
 CreateAsset_0 Create Asset
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return BasicOperationsAPICreateAsset_0Request
+ @return ApiCreateAsset_0Request
 */
-func (a *BasicOperationsAPIService) CreateAsset_2(ctx context.Context) BasicOperationsAPICreateAsset_0Request {
-	return BasicOperationsAPICreateAsset_0Request{
+func (a *BasicOperationsAPIService) CreateAsset_2(ctx context.Context) ApiCreateAsset_0Request {
+	return ApiCreateAsset_0Request{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -509,7 +509,7 @@ func (a *BasicOperationsAPIService) CreateAsset_2(ctx context.Context) BasicOper
 
 // Execute executes the request
 //  @return DamAsset
-func (a *BasicOperationsAPIService) CreateAsset_2Execute(r BasicOperationsAPICreateAsset_0Request) (*DamAsset, *http.Response, error) {
+func (a *BasicOperationsAPIService) CreateAsset_2Execute(r ApiCreateAsset_0Request) (*DamAsset, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -631,18 +631,18 @@ func (a *BasicOperationsAPIService) CreateAsset_2Execute(r BasicOperationsAPICre
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type BasicOperationsAPIGetAssetByCodeRequest struct {
+type ApiGetAssetByCodeRequest struct {
 	ctx context.Context
 	ApiService *BasicOperationsAPIService
 	body *DamGetAssetByCodeRequest
 }
 
-func (r BasicOperationsAPIGetAssetByCodeRequest) Body(body DamGetAssetByCodeRequest) BasicOperationsAPIGetAssetByCodeRequest {
+func (r ApiGetAssetByCodeRequest) Body(body DamGetAssetByCodeRequest) ApiGetAssetByCodeRequest {
 	r.body = &body
 	return r
 }
 
-func (r BasicOperationsAPIGetAssetByCodeRequest) Execute() (*DamAsset, *http.Response, error) {
+func (r ApiGetAssetByCodeRequest) Execute() (*DamAsset, *http.Response, error) {
 	return r.ApiService.GetAssetByCodeExecute(r)
 }
 
@@ -650,10 +650,10 @@ func (r BasicOperationsAPIGetAssetByCodeRequest) Execute() (*DamAsset, *http.Res
 GetAssetByCode Get Asset By Code
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return BasicOperationsAPIGetAssetByCodeRequest
+ @return ApiGetAssetByCodeRequest
 */
-func (a *BasicOperationsAPIService) GetAssetByCode(ctx context.Context) BasicOperationsAPIGetAssetByCodeRequest {
-	return BasicOperationsAPIGetAssetByCodeRequest{
+func (a *BasicOperationsAPIService) GetAssetByCode(ctx context.Context) ApiGetAssetByCodeRequest {
+	return ApiGetAssetByCodeRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -661,7 +661,7 @@ func (a *BasicOperationsAPIService) GetAssetByCode(ctx context.Context) BasicOpe
 
 // Execute executes the request
 //  @return DamAsset
-func (a *BasicOperationsAPIService) GetAssetByCodeExecute(r BasicOperationsAPIGetAssetByCodeRequest) (*DamAsset, *http.Response, error) {
+func (a *BasicOperationsAPIService) GetAssetByCodeExecute(r ApiGetAssetByCodeRequest) (*DamAsset, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -783,18 +783,18 @@ func (a *BasicOperationsAPIService) GetAssetByCodeExecute(r BasicOperationsAPIGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type BasicOperationsAPIGetAssetByCode_0Request struct {
+type ApiGetAssetByCode_0Request struct {
 	ctx context.Context
 	ApiService *BasicOperationsAPIService
 	body *DamGetAssetByCodeRequest
 }
 
-func (r BasicOperationsAPIGetAssetByCode_0Request) Body(body DamGetAssetByCodeRequest) BasicOperationsAPIGetAssetByCode_0Request {
+func (r ApiGetAssetByCode_0Request) Body(body DamGetAssetByCodeRequest) ApiGetAssetByCode_0Request {
 	r.body = &body
 	return r
 }
 
-func (r BasicOperationsAPIGetAssetByCode_0Request) Execute() (*DamAsset, *http.Response, error) {
+func (r ApiGetAssetByCode_0Request) Execute() (*DamAsset, *http.Response, error) {
 	return r.ApiService.GetAssetByCode_3Execute(r)
 }
 
@@ -802,10 +802,10 @@ func (r BasicOperationsAPIGetAssetByCode_0Request) Execute() (*DamAsset, *http.R
 GetAssetByCode_0 Get Asset By Code
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return BasicOperationsAPIGetAssetByCode_0Request
+ @return ApiGetAssetByCode_0Request
 */
-func (a *BasicOperationsAPIService) GetAssetByCode_3(ctx context.Context) BasicOperationsAPIGetAssetByCode_0Request {
-	return BasicOperationsAPIGetAssetByCode_0Request{
+func (a *BasicOperationsAPIService) GetAssetByCode_3(ctx context.Context) ApiGetAssetByCode_0Request {
+	return ApiGetAssetByCode_0Request{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -813,7 +813,7 @@ func (a *BasicOperationsAPIService) GetAssetByCode_3(ctx context.Context) BasicO
 
 // Execute executes the request
 //  @return DamAsset
-func (a *BasicOperationsAPIService) GetAssetByCode_3Execute(r BasicOperationsAPIGetAssetByCode_0Request) (*DamAsset, *http.Response, error) {
+func (a *BasicOperationsAPIService) GetAssetByCode_3Execute(r ApiGetAssetByCode_0Request) (*DamAsset, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -935,18 +935,18 @@ func (a *BasicOperationsAPIService) GetAssetByCode_3Execute(r BasicOperationsAPI
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type BasicOperationsAPIListAssetsRequest struct {
+type ApiListAssetsRequest struct {
 	ctx context.Context
 	ApiService *BasicOperationsAPIService
 	body *DamListAssetsRequest
 }
 
-func (r BasicOperationsAPIListAssetsRequest) Body(body DamListAssetsRequest) BasicOperationsAPIListAssetsRequest {
+func (r ApiListAssetsRequest) Body(body DamListAssetsRequest) ApiListAssetsRequest {
 	r.body = &body
 	return r
 }
 
-func (r BasicOperationsAPIListAssetsRequest) Execute() (*DamListAssetsResponse, *http.Response, error) {
+func (r ApiListAssetsRequest) Execute() (*DamListAssetsResponse, *http.Response, error) {
 	return r.ApiService.ListAssetsExecute(r)
 }
 
@@ -954,10 +954,10 @@ func (r BasicOperationsAPIListAssetsRequest) Execute() (*DamListAssetsResponse, 
 ListAssets List Assets
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return BasicOperationsAPIListAssetsRequest
+ @return ApiListAssetsRequest
 */
-func (a *BasicOperationsAPIService) ListAssets(ctx context.Context) BasicOperationsAPIListAssetsRequest {
-	return BasicOperationsAPIListAssetsRequest{
+func (a *BasicOperationsAPIService) ListAssets(ctx context.Context) ApiListAssetsRequest {
+	return ApiListAssetsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -965,7 +965,7 @@ func (a *BasicOperationsAPIService) ListAssets(ctx context.Context) BasicOperati
 
 // Execute executes the request
 //  @return DamListAssetsResponse
-func (a *BasicOperationsAPIService) ListAssetsExecute(r BasicOperationsAPIListAssetsRequest) (*DamListAssetsResponse, *http.Response, error) {
+func (a *BasicOperationsAPIService) ListAssetsExecute(r ApiListAssetsRequest) (*DamListAssetsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1087,18 +1087,18 @@ func (a *BasicOperationsAPIService) ListAssetsExecute(r BasicOperationsAPIListAs
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type BasicOperationsAPIListAssetsByCodesRequest struct {
+type ApiListAssetsByCodesRequest struct {
 	ctx context.Context
 	ApiService *BasicOperationsAPIService
 	body *DamListAssetsByCodesRequest
 }
 
-func (r BasicOperationsAPIListAssetsByCodesRequest) Body(body DamListAssetsByCodesRequest) BasicOperationsAPIListAssetsByCodesRequest {
+func (r ApiListAssetsByCodesRequest) Body(body DamListAssetsByCodesRequest) ApiListAssetsByCodesRequest {
 	r.body = &body
 	return r
 }
 
-func (r BasicOperationsAPIListAssetsByCodesRequest) Execute() (*DamListAssetsByCodesResponse, *http.Response, error) {
+func (r ApiListAssetsByCodesRequest) Execute() (*DamListAssetsByCodesResponse, *http.Response, error) {
 	return r.ApiService.ListAssetsByCodesExecute(r)
 }
 
@@ -1106,10 +1106,10 @@ func (r BasicOperationsAPIListAssetsByCodesRequest) Execute() (*DamListAssetsByC
 ListAssetsByCodes List Assets By Codes
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return BasicOperationsAPIListAssetsByCodesRequest
+ @return ApiListAssetsByCodesRequest
 */
-func (a *BasicOperationsAPIService) ListAssetsByCodes(ctx context.Context) BasicOperationsAPIListAssetsByCodesRequest {
-	return BasicOperationsAPIListAssetsByCodesRequest{
+func (a *BasicOperationsAPIService) ListAssetsByCodes(ctx context.Context) ApiListAssetsByCodesRequest {
+	return ApiListAssetsByCodesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1117,7 +1117,7 @@ func (a *BasicOperationsAPIService) ListAssetsByCodes(ctx context.Context) Basic
 
 // Execute executes the request
 //  @return DamListAssetsByCodesResponse
-func (a *BasicOperationsAPIService) ListAssetsByCodesExecute(r BasicOperationsAPIListAssetsByCodesRequest) (*DamListAssetsByCodesResponse, *http.Response, error) {
+func (a *BasicOperationsAPIService) ListAssetsByCodesExecute(r ApiListAssetsByCodesRequest) (*DamListAssetsByCodesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1239,18 +1239,18 @@ func (a *BasicOperationsAPIService) ListAssetsByCodesExecute(r BasicOperationsAP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type BasicOperationsAPIListAssetsByCodes_0Request struct {
+type ApiListAssetsByCodes_0Request struct {
 	ctx context.Context
 	ApiService *BasicOperationsAPIService
 	body *DamListAssetsByCodesRequest
 }
 
-func (r BasicOperationsAPIListAssetsByCodes_0Request) Body(body DamListAssetsByCodesRequest) BasicOperationsAPIListAssetsByCodes_0Request {
+func (r ApiListAssetsByCodes_0Request) Body(body DamListAssetsByCodesRequest) ApiListAssetsByCodes_0Request {
 	r.body = &body
 	return r
 }
 
-func (r BasicOperationsAPIListAssetsByCodes_0Request) Execute() (*DamListAssetsByCodesResponse, *http.Response, error) {
+func (r ApiListAssetsByCodes_0Request) Execute() (*DamListAssetsByCodesResponse, *http.Response, error) {
 	return r.ApiService.ListAssetsByCodes_4Execute(r)
 }
 
@@ -1258,10 +1258,10 @@ func (r BasicOperationsAPIListAssetsByCodes_0Request) Execute() (*DamListAssetsB
 ListAssetsByCodes_0 List Assets By Codes
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return BasicOperationsAPIListAssetsByCodes_0Request
+ @return ApiListAssetsByCodes_0Request
 */
-func (a *BasicOperationsAPIService) ListAssetsByCodes_4(ctx context.Context) BasicOperationsAPIListAssetsByCodes_0Request {
-	return BasicOperationsAPIListAssetsByCodes_0Request{
+func (a *BasicOperationsAPIService) ListAssetsByCodes_4(ctx context.Context) ApiListAssetsByCodes_0Request {
+	return ApiListAssetsByCodes_0Request{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1269,7 +1269,7 @@ func (a *BasicOperationsAPIService) ListAssetsByCodes_4(ctx context.Context) Bas
 
 // Execute executes the request
 //  @return DamListAssetsByCodesResponse
-func (a *BasicOperationsAPIService) ListAssetsByCodes_4Execute(r BasicOperationsAPIListAssetsByCodes_0Request) (*DamListAssetsByCodesResponse, *http.Response, error) {
+func (a *BasicOperationsAPIService) ListAssetsByCodes_4Execute(r ApiListAssetsByCodes_0Request) (*DamListAssetsByCodesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1391,18 +1391,18 @@ func (a *BasicOperationsAPIService) ListAssetsByCodes_4Execute(r BasicOperations
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type BasicOperationsAPIListAssetsByIdsRequest struct {
+type ApiListAssetsByIdsRequest struct {
 	ctx context.Context
 	ApiService *BasicOperationsAPIService
 	body *DamListAssetsByIdsRequest
 }
 
-func (r BasicOperationsAPIListAssetsByIdsRequest) Body(body DamListAssetsByIdsRequest) BasicOperationsAPIListAssetsByIdsRequest {
+func (r ApiListAssetsByIdsRequest) Body(body DamListAssetsByIdsRequest) ApiListAssetsByIdsRequest {
 	r.body = &body
 	return r
 }
 
-func (r BasicOperationsAPIListAssetsByIdsRequest) Execute() (*DamListAssetsByIdsResponse, *http.Response, error) {
+func (r ApiListAssetsByIdsRequest) Execute() (*DamListAssetsByIdsResponse, *http.Response, error) {
 	return r.ApiService.ListAssetsByIdsExecute(r)
 }
 
@@ -1410,10 +1410,10 @@ func (r BasicOperationsAPIListAssetsByIdsRequest) Execute() (*DamListAssetsByIds
 ListAssetsByIds List Assets By Ids
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return BasicOperationsAPIListAssetsByIdsRequest
+ @return ApiListAssetsByIdsRequest
 */
-func (a *BasicOperationsAPIService) ListAssetsByIds(ctx context.Context) BasicOperationsAPIListAssetsByIdsRequest {
-	return BasicOperationsAPIListAssetsByIdsRequest{
+func (a *BasicOperationsAPIService) ListAssetsByIds(ctx context.Context) ApiListAssetsByIdsRequest {
+	return ApiListAssetsByIdsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1421,7 +1421,7 @@ func (a *BasicOperationsAPIService) ListAssetsByIds(ctx context.Context) BasicOp
 
 // Execute executes the request
 //  @return DamListAssetsByIdsResponse
-func (a *BasicOperationsAPIService) ListAssetsByIdsExecute(r BasicOperationsAPIListAssetsByIdsRequest) (*DamListAssetsByIdsResponse, *http.Response, error) {
+func (a *BasicOperationsAPIService) ListAssetsByIdsExecute(r ApiListAssetsByIdsRequest) (*DamListAssetsByIdsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1543,18 +1543,18 @@ func (a *BasicOperationsAPIService) ListAssetsByIdsExecute(r BasicOperationsAPIL
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type BasicOperationsAPIListAssetsByIds_0Request struct {
+type ApiListAssetsByIds_0Request struct {
 	ctx context.Context
 	ApiService *BasicOperationsAPIService
 	body *DamListAssetsByIdsRequest
 }
 
-func (r BasicOperationsAPIListAssetsByIds_0Request) Body(body DamListAssetsByIdsRequest) BasicOperationsAPIListAssetsByIds_0Request {
+func (r ApiListAssetsByIds_0Request) Body(body DamListAssetsByIdsRequest) ApiListAssetsByIds_0Request {
 	r.body = &body
 	return r
 }
 
-func (r BasicOperationsAPIListAssetsByIds_0Request) Execute() (*DamListAssetsByIdsResponse, *http.Response, error) {
+func (r ApiListAssetsByIds_0Request) Execute() (*DamListAssetsByIdsResponse, *http.Response, error) {
 	return r.ApiService.ListAssetsByIds_5Execute(r)
 }
 
@@ -1562,10 +1562,10 @@ func (r BasicOperationsAPIListAssetsByIds_0Request) Execute() (*DamListAssetsByI
 ListAssetsByIds_0 List Assets By Ids
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return BasicOperationsAPIListAssetsByIds_0Request
+ @return ApiListAssetsByIds_0Request
 */
-func (a *BasicOperationsAPIService) ListAssetsByIds_5(ctx context.Context) BasicOperationsAPIListAssetsByIds_0Request {
-	return BasicOperationsAPIListAssetsByIds_0Request{
+func (a *BasicOperationsAPIService) ListAssetsByIds_5(ctx context.Context) ApiListAssetsByIds_0Request {
+	return ApiListAssetsByIds_0Request{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1573,7 +1573,7 @@ func (a *BasicOperationsAPIService) ListAssetsByIds_5(ctx context.Context) Basic
 
 // Execute executes the request
 //  @return DamListAssetsByIdsResponse
-func (a *BasicOperationsAPIService) ListAssetsByIds_5Execute(r BasicOperationsAPIListAssetsByIds_0Request) (*DamListAssetsByIdsResponse, *http.Response, error) {
+func (a *BasicOperationsAPIService) ListAssetsByIds_5Execute(r ApiListAssetsByIds_0Request) (*DamListAssetsByIdsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1695,18 +1695,18 @@ func (a *BasicOperationsAPIService) ListAssetsByIds_5Execute(r BasicOperationsAP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type BasicOperationsAPIListAssets_0Request struct {
+type ApiListAssets_0Request struct {
 	ctx context.Context
 	ApiService *BasicOperationsAPIService
 	body *DamListAssetsRequest
 }
 
-func (r BasicOperationsAPIListAssets_0Request) Body(body DamListAssetsRequest) BasicOperationsAPIListAssets_0Request {
+func (r ApiListAssets_0Request) Body(body DamListAssetsRequest) ApiListAssets_0Request {
 	r.body = &body
 	return r
 }
 
-func (r BasicOperationsAPIListAssets_0Request) Execute() (*DamListAssetsResponse, *http.Response, error) {
+func (r ApiListAssets_0Request) Execute() (*DamListAssetsResponse, *http.Response, error) {
 	return r.ApiService.ListAssets_6Execute(r)
 }
 
@@ -1714,10 +1714,10 @@ func (r BasicOperationsAPIListAssets_0Request) Execute() (*DamListAssetsResponse
 ListAssets_0 List Assets
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return BasicOperationsAPIListAssets_0Request
+ @return ApiListAssets_0Request
 */
-func (a *BasicOperationsAPIService) ListAssets_6(ctx context.Context) BasicOperationsAPIListAssets_0Request {
-	return BasicOperationsAPIListAssets_0Request{
+func (a *BasicOperationsAPIService) ListAssets_6(ctx context.Context) ApiListAssets_0Request {
+	return ApiListAssets_0Request{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1725,7 +1725,7 @@ func (a *BasicOperationsAPIService) ListAssets_6(ctx context.Context) BasicOpera
 
 // Execute executes the request
 //  @return DamListAssetsResponse
-func (a *BasicOperationsAPIService) ListAssets_6Execute(r BasicOperationsAPIListAssets_0Request) (*DamListAssetsResponse, *http.Response, error) {
+func (a *BasicOperationsAPIService) ListAssets_6Execute(r ApiListAssets_0Request) (*DamListAssetsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1847,18 +1847,18 @@ func (a *BasicOperationsAPIService) ListAssets_6Execute(r BasicOperationsAPIList
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type BasicOperationsAPIUpdateAssetRequest struct {
+type ApiUpdateAssetRequest struct {
 	ctx context.Context
 	ApiService *BasicOperationsAPIService
 	body *DamUpdateAssetRequest
 }
 
-func (r BasicOperationsAPIUpdateAssetRequest) Body(body DamUpdateAssetRequest) BasicOperationsAPIUpdateAssetRequest {
+func (r ApiUpdateAssetRequest) Body(body DamUpdateAssetRequest) ApiUpdateAssetRequest {
 	r.body = &body
 	return r
 }
 
-func (r BasicOperationsAPIUpdateAssetRequest) Execute() (*DamAsset, *http.Response, error) {
+func (r ApiUpdateAssetRequest) Execute() (*DamAsset, *http.Response, error) {
 	return r.ApiService.UpdateAssetExecute(r)
 }
 
@@ -1866,10 +1866,10 @@ func (r BasicOperationsAPIUpdateAssetRequest) Execute() (*DamAsset, *http.Respon
 UpdateAsset Update Asset
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return BasicOperationsAPIUpdateAssetRequest
+ @return ApiUpdateAssetRequest
 */
-func (a *BasicOperationsAPIService) UpdateAsset(ctx context.Context) BasicOperationsAPIUpdateAssetRequest {
-	return BasicOperationsAPIUpdateAssetRequest{
+func (a *BasicOperationsAPIService) UpdateAsset(ctx context.Context) ApiUpdateAssetRequest {
+	return ApiUpdateAssetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1877,7 +1877,7 @@ func (a *BasicOperationsAPIService) UpdateAsset(ctx context.Context) BasicOperat
 
 // Execute executes the request
 //  @return DamAsset
-func (a *BasicOperationsAPIService) UpdateAssetExecute(r BasicOperationsAPIUpdateAssetRequest) (*DamAsset, *http.Response, error) {
+func (a *BasicOperationsAPIService) UpdateAssetExecute(r ApiUpdateAssetRequest) (*DamAsset, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1999,18 +1999,18 @@ func (a *BasicOperationsAPIService) UpdateAssetExecute(r BasicOperationsAPIUpdat
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type BasicOperationsAPIUpdateAsset_0Request struct {
+type ApiUpdateAsset_0Request struct {
 	ctx context.Context
 	ApiService *BasicOperationsAPIService
 	body *DamUpdateAssetRequest
 }
 
-func (r BasicOperationsAPIUpdateAsset_0Request) Body(body DamUpdateAssetRequest) BasicOperationsAPIUpdateAsset_0Request {
+func (r ApiUpdateAsset_0Request) Body(body DamUpdateAssetRequest) ApiUpdateAsset_0Request {
 	r.body = &body
 	return r
 }
 
-func (r BasicOperationsAPIUpdateAsset_0Request) Execute() (*DamAsset, *http.Response, error) {
+func (r ApiUpdateAsset_0Request) Execute() (*DamAsset, *http.Response, error) {
 	return r.ApiService.UpdateAsset_7Execute(r)
 }
 
@@ -2018,10 +2018,10 @@ func (r BasicOperationsAPIUpdateAsset_0Request) Execute() (*DamAsset, *http.Resp
 UpdateAsset_0 Update Asset
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return BasicOperationsAPIUpdateAsset_0Request
+ @return ApiUpdateAsset_0Request
 */
-func (a *BasicOperationsAPIService) UpdateAsset_7(ctx context.Context) BasicOperationsAPIUpdateAsset_0Request {
-	return BasicOperationsAPIUpdateAsset_0Request{
+func (a *BasicOperationsAPIService) UpdateAsset_7(ctx context.Context) ApiUpdateAsset_0Request {
+	return ApiUpdateAsset_0Request{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -2029,7 +2029,7 @@ func (a *BasicOperationsAPIService) UpdateAsset_7(ctx context.Context) BasicOper
 
 // Execute executes the request
 //  @return DamAsset
-func (a *BasicOperationsAPIService) UpdateAsset_7Execute(r BasicOperationsAPIUpdateAsset_0Request) (*DamAsset, *http.Response, error) {
+func (a *BasicOperationsAPIService) UpdateAsset_7Execute(r ApiUpdateAsset_0Request) (*DamAsset, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

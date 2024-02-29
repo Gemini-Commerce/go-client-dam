@@ -22,7 +22,7 @@ go get golang.org/x/net/context
 Put the package under your project folder and add the following in import:
 
 ```go
-import dam "github.com/gemini-commerce/go-client-dam"
+import dam "github.com/Gemini-Commerce/go-client-dam"
 ```
 
 To use a proxy, set the environment variable `HTTP_PROXY`:

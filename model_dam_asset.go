@@ -37,7 +37,7 @@ type DamAsset struct {
 // will change when the set of required properties is changed
 func NewDamAsset() *DamAsset {
 	this := DamAsset{}
-	var type_ DamAssetType = DAMASSETTYPE_UNKNOWN
+	var type_ DamAssetType = UNKNOWN
 	this.Type = &type_
 	return &this
 }
@@ -47,7 +47,7 @@ func NewDamAsset() *DamAsset {
 // but it doesn't guarantee that properties required by API are set
 func NewDamAssetWithDefaults() *DamAsset {
 	this := DamAsset{}
-	var type_ DamAssetType = DAMASSETTYPE_UNKNOWN
+	var type_ DamAssetType = UNKNOWN
 	this.Type = &type_
 	return &this
 }

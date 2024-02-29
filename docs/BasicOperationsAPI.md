@@ -1,4 +1,4 @@
-# \BasicOperationsAPI
+# GeminiCommerce\Dam\BasicOperationsAPI
 
 All URIs are relative to *https://dam.api.gogemini.io*
 
@@ -36,7 +36,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-dam"
+	openapiclient "github.com/Gemini-Commerce/go-client-dam"
 )
 
 func main() {
@@ -100,7 +100,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-dam"
+	openapiclient "github.com/Gemini-Commerce/go-client-dam"
 )
 
 func main() {
@@ -164,7 +164,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-dam"
+	openapiclient "github.com/Gemini-Commerce/go-client-dam"
 )
 
 func main() {
@@ -228,7 +228,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-dam"
+	openapiclient "github.com/Gemini-Commerce/go-client-dam"
 )
 
 func main() {
@@ -292,7 +292,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-dam"
+	openapiclient "github.com/Gemini-Commerce/go-client-dam"
 )
 
 func main() {
@@ -356,7 +356,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-dam"
+	openapiclient "github.com/Gemini-Commerce/go-client-dam"
 )
 
 func main() {
@@ -420,7 +420,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-dam"
+	openapiclient "github.com/Gemini-Commerce/go-client-dam"
 )
 
 func main() {
@@ -484,7 +484,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-dam"
+	openapiclient "github.com/Gemini-Commerce/go-client-dam"
 )
 
 func main() {
@@ -548,7 +548,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-dam"
+	openapiclient "github.com/Gemini-Commerce/go-client-dam"
 )
 
 func main() {
@@ -612,7 +612,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-dam"
+	openapiclient "github.com/Gemini-Commerce/go-client-dam"
 )
 
 func main() {
@@ -676,7 +676,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-dam"
+	openapiclient "github.com/Gemini-Commerce/go-client-dam"
 )
 
 func main() {
@@ -740,7 +740,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-dam"
+	openapiclient "github.com/Gemini-Commerce/go-client-dam"
 )
 
 func main() {
@@ -804,7 +804,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-dam"
+	openapiclient "github.com/Gemini-Commerce/go-client-dam"
 )
 
 func main() {
@@ -868,7 +868,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/gemini-commerce/go-client-dam"
+	openapiclient "github.com/Gemini-Commerce/go-client-dam"
 )
 
 func main() {

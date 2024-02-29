@@ -1,4 +1,4 @@
-module github.com/gemini-commerce/go-client-dam
+module github.com/Gemini-Commerce/go-client-dam
 
 go 1.18
 

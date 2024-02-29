@@ -49,7 +49,7 @@ func NewDamCreateAssetRequest(tenantId string, type_ DamAssetType, code string, 
 // but it doesn't guarantee that properties required by API are set
 func NewDamCreateAssetRequestWithDefaults() *DamCreateAssetRequest {
 	this := DamCreateAssetRequest{}
-	var type_ DamAssetType = DAMASSETTYPE_UNKNOWN
+	var type_ DamAssetType = UNKNOWN
 	this.Type = type_
 	return &this
 }

@@ -30,7 +30,7 @@ type DamAssetOrigin struct {
 // will change when the set of required properties is changed
 func NewDamAssetOrigin() *DamAssetOrigin {
 	this := DamAssetOrigin{}
-	var type_ AssetOriginTypes = ASSETORIGINTYPES_EXTERNAL
+	var type_ AssetOriginTypes = EXTERNAL
 	this.Type = &type_
 	return &this
 }
@@ -40,7 +40,7 @@ func NewDamAssetOrigin() *DamAssetOrigin {
 // but it doesn't guarantee that properties required by API are set
 func NewDamAssetOriginWithDefaults() *DamAssetOrigin {
 	this := DamAssetOrigin{}
-	var type_ AssetOriginTypes = ASSETORIGINTYPES_EXTERNAL
+	var type_ AssetOriginTypes = EXTERNAL
 	this.Type = &type_
 	return &this
 }

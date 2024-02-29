@@ -21,8 +21,8 @@ type AssetOriginTypes string
 
 // List of AssetOriginTypes
 const (
-	ASSETORIGINTYPES_EXTERNAL AssetOriginTypes = "EXTERNAL"
-	ASSETORIGINTYPES_S3 AssetOriginTypes = "S3"
+	EXTERNAL AssetOriginTypes = "EXTERNAL"
+	S3 AssetOriginTypes = "S3"
 )
 
 // All allowed values of AssetOriginTypes enum
