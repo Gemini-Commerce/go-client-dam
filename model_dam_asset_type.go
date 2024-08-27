@@ -21,11 +21,11 @@ type DamAssetType string
 
 // List of damAssetType
 const (
-	UNKNOWN DamAssetType = "UNKNOWN"
-	IMAGE DamAssetType = "IMAGE"
-	VIDEO DamAssetType = "VIDEO"
-	VIDEO_EXTERNAL DamAssetType = "VIDEO_EXTERNAL"
-	APPLICATION DamAssetType = "APPLICATION"
+	DAMASSETTYPE_UNKNOWN DamAssetType = "UNKNOWN"
+	DAMASSETTYPE_IMAGE DamAssetType = "IMAGE"
+	DAMASSETTYPE_VIDEO DamAssetType = "VIDEO"
+	DAMASSETTYPE_VIDEO_EXTERNAL DamAssetType = "VIDEO_EXTERNAL"
+	DAMASSETTYPE_APPLICATION DamAssetType = "APPLICATION"
 )
 
 // All allowed values of DamAssetType enum

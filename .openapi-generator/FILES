@@ -50,5 +50,4 @@ model_protobuf_any.go
 model_rpc_status.go
 model_update_asset_request_payload.go
 response.go
-test/api_basic_operations_test.go
 utils.go
