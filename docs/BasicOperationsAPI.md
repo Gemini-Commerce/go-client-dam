@@ -1,4 +1,4 @@
-# GeminiCommerce\Dam\BasicOperationsAPI
+# \BasicOperationsAPI
 
 All URIs are relative to *https://dam.api.gogemini.io*
 

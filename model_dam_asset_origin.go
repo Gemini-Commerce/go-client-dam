@@ -22,7 +22,10 @@ var _ MappedNullable = &DamAssetOrigin{}
 type DamAssetOrigin struct {
 	Url *string `json:"url,omitempty"`
 	Type *AssetOriginTypes `json:"type,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _DamAssetOrigin DamAssetOrigin
 
 // NewDamAssetOrigin instantiates a new DamAssetOrigin object
 // This constructor will assign default values to properties that have it defined,
@@ -63,8 +66,8 @@ func (o *DamAssetOrigin) GetUrlOk() (*string, bool) {
 	return o.Url, true
 }
 
-// HasUrl returns a boolean if a field has been set.
-func (o *DamAssetOrigin) HasUrl() bool {
+// &#39;Has&#39;Url returns a boolean if a field has been set.
+func (o *DamAssetOrigin) &#39;Has&#39;Url() bool {
 	if o != nil && !IsNil(o.Url) {
 		return true
 	}
@@ -95,8 +98,8 @@ func (o *DamAssetOrigin) GetTypeOk() (*AssetOriginTypes, bool) {
 	return o.Type, true
 }
 
-// HasType returns a boolean if a field has been set.
-func (o *DamAssetOrigin) HasType() bool {
+// &#39;Has&#39;Type returns a boolean if a field has been set.
+func (o *DamAssetOrigin) &#39;Has&#39;Type() bool {
 	if o != nil && !IsNil(o.Type) {
 		return true
 	}
@@ -125,9 +128,54 @@ func (o DamAssetOrigin) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *DamAssetOrigin) UnmarshalJSON(data []byte) (err error) {
+	varDamAssetOrigin := _DamAssetOrigin{}
+
+	err = json.Unmarshal(data, &varDamAssetOrigin)
+
+	if err != nil {
+		return err
+	}
+
+	*o = DamAssetOrigin(varDamAssetOrigin)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "type")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *DamAssetOrigin) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *DamAssetOrigin) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableDamAssetOrigin struct {
 	value *DamAssetOrigin
 	isSet bool

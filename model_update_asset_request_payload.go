@@ -13,7 +13,6 @@ package dam
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -25,6 +24,7 @@ type UpdateAssetRequestPayload struct {
 	Code *string `json:"code,omitempty"`
 	Origin DamAssetOrigin `json:"origin"`
 	Metadata []AssetMetadata `json:"metadata,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateAssetRequestPayload UpdateAssetRequestPayload
@@ -65,8 +65,8 @@ func (o *UpdateAssetRequestPayload) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// HasCode returns a boolean if a field has been set.
-func (o *UpdateAssetRequestPayload) HasCode() bool {
+// &#39;Has&#39;Code returns a boolean if a field has been set.
+func (o *UpdateAssetRequestPayload) &#39;Has&#39;Code() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -121,8 +121,8 @@ func (o *UpdateAssetRequestPayload) GetMetadataOk() ([]AssetMetadata, bool) {
 	return o.Metadata, true
 }
 
-// HasMetadata returns a boolean if a field has been set.
-func (o *UpdateAssetRequestPayload) HasMetadata() bool {
+// &#39;Has&#39;Metadata returns a boolean if a field has been set.
+func (o *UpdateAssetRequestPayload) &#39;Has&#39;Metadata() bool {
 	if o != nil && !IsNil(o.Metadata) {
 		return true
 	}
@@ -152,6 +152,11 @@ func (o UpdateAssetRequestPayload) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Metadata) {
 		toSerialize["metadata"] = o.Metadata
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -179,9 +184,7 @@ func (o *UpdateAssetRequestPayload) UnmarshalJSON(data []byte) (err error) {
 
 	varUpdateAssetRequestPayload := _UpdateAssetRequestPayload{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varUpdateAssetRequestPayload)
+	err = json.Unmarshal(data, &varUpdateAssetRequestPayload)
 
 	if err != nil {
 		return err
@@ -189,9 +192,36 @@ func (o *UpdateAssetRequestPayload) UnmarshalJSON(data []byte) (err error) {
 
 	*o = UpdateAssetRequestPayload(varUpdateAssetRequestPayload)
 
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "origin")
+		delete(additionalProperties, "metadata")
+		o.AdditionalProperties = additionalProperties
+	}
+
 	return err
 }
 
+// GetValue returns the value of well-known types
+func (o *UpdateAssetRequestPayload) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *UpdateAssetRequestPayload) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableUpdateAssetRequestPayload struct {
 	value *UpdateAssetRequestPayload
 	isSet bool

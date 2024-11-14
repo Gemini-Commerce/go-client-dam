@@ -13,7 +13,6 @@ package dam
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -24,6 +23,7 @@ var _ MappedNullable = &DamGetAssetByCodeRequest{}
 type DamGetAssetByCodeRequest struct {
 	TenantId string `json:"tenantId"`
 	Code string `json:"code"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _DamGetAssetByCodeRequest DamGetAssetByCodeRequest
@@ -107,6 +107,11 @@ func (o DamGetAssetByCodeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["tenantId"] = o.TenantId
 	toSerialize["code"] = o.Code
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -135,9 +140,7 @@ func (o *DamGetAssetByCodeRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varDamGetAssetByCodeRequest := _DamGetAssetByCodeRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varDamGetAssetByCodeRequest)
+	err = json.Unmarshal(data, &varDamGetAssetByCodeRequest)
 
 	if err != nil {
 		return err
@@ -145,9 +148,35 @@ func (o *DamGetAssetByCodeRequest) UnmarshalJSON(data []byte) (err error) {
 
 	*o = DamGetAssetByCodeRequest(varDamGetAssetByCodeRequest)
 
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "code")
+		o.AdditionalProperties = additionalProperties
+	}
+
 	return err
 }
 
+// GetValue returns the value of well-known types
+func (o *DamGetAssetByCodeRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *DamGetAssetByCodeRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableDamGetAssetByCodeRequest struct {
 	value *DamGetAssetByCodeRequest
 	isSet bool

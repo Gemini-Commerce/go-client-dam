@@ -732,7 +732,7 @@ components:
         code: code
         publicUrl: publicUrl
         id: id
-        type: null
+        type: UNKNOWN
         updatedAt: 2000-01-23T04:56:07.000+00:00
       properties:
         createdAt:
@@ -853,7 +853,7 @@ components:
           code: code
           publicUrl: publicUrl
           id: id
-          type: null
+          type: UNKNOWN
           updatedAt: 2000-01-23T04:56:07.000+00:00
         - createdAt: 2000-01-23T04:56:07.000+00:00
           metadata:
@@ -865,7 +865,7 @@ components:
           code: code
           publicUrl: publicUrl
           id: id
-          type: null
+          type: UNKNOWN
           updatedAt: 2000-01-23T04:56:07.000+00:00
       properties:
         assets:
@@ -898,7 +898,7 @@ components:
           code: code
           publicUrl: publicUrl
           id: id
-          type: null
+          type: UNKNOWN
           updatedAt: 2000-01-23T04:56:07.000+00:00
         - createdAt: 2000-01-23T04:56:07.000+00:00
           metadata:
@@ -910,7 +910,7 @@ components:
           code: code
           publicUrl: publicUrl
           id: id
-          type: null
+          type: UNKNOWN
           updatedAt: 2000-01-23T04:56:07.000+00:00
       properties:
         assets:
@@ -955,7 +955,7 @@ components:
           code: code
           publicUrl: publicUrl
           id: id
-          type: null
+          type: UNKNOWN
           updatedAt: 2000-01-23T04:56:07.000+00:00
         - createdAt: 2000-01-23T04:56:07.000+00:00
           metadata:
@@ -967,7 +967,7 @@ components:
           code: code
           publicUrl: publicUrl
           id: id
-          type: null
+          type: UNKNOWN
           updatedAt: 2000-01-23T04:56:07.000+00:00
         nextPageToken: nextPageToken
       properties:
@@ -998,11 +998,19 @@ components:
     protobufAny:
       additionalProperties:
         type: object
+      example:
+        '@type': '@type'
       properties:
         '@type':
           type: string
       type: object
     rpcStatus:
+      example:
+        code: 0
+        details:
+        - '@type': '@type'
+        - '@type': '@type'
+        message: message
       properties:
         code:
           format: int32

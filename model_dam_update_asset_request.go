@@ -13,7 +13,6 @@ package dam
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -26,6 +25,7 @@ type DamUpdateAssetRequest struct {
 	Id string `json:"id"`
 	Payload *UpdateAssetRequestPayload `json:"payload,omitempty"`
 	PayloadMask *string `json:"payloadMask,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _DamUpdateAssetRequest DamUpdateAssetRequest
@@ -115,8 +115,8 @@ func (o *DamUpdateAssetRequest) GetPayloadOk() (*UpdateAssetRequestPayload, bool
 	return o.Payload, true
 }
 
-// HasPayload returns a boolean if a field has been set.
-func (o *DamUpdateAssetRequest) HasPayload() bool {
+// &#39;Has&#39;Payload returns a boolean if a field has been set.
+func (o *DamUpdateAssetRequest) &#39;Has&#39;Payload() bool {
 	if o != nil && !IsNil(o.Payload) {
 		return true
 	}
@@ -147,8 +147,8 @@ func (o *DamUpdateAssetRequest) GetPayloadMaskOk() (*string, bool) {
 	return o.PayloadMask, true
 }
 
-// HasPayloadMask returns a boolean if a field has been set.
-func (o *DamUpdateAssetRequest) HasPayloadMask() bool {
+// &#39;Has&#39;PayloadMask returns a boolean if a field has been set.
+func (o *DamUpdateAssetRequest) &#39;Has&#39;PayloadMask() bool {
 	if o != nil && !IsNil(o.PayloadMask) {
 		return true
 	}
@@ -179,6 +179,11 @@ func (o DamUpdateAssetRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.PayloadMask) {
 		toSerialize["payloadMask"] = o.PayloadMask
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -207,9 +212,7 @@ func (o *DamUpdateAssetRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varDamUpdateAssetRequest := _DamUpdateAssetRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varDamUpdateAssetRequest)
+	err = json.Unmarshal(data, &varDamUpdateAssetRequest)
 
 	if err != nil {
 		return err
@@ -217,9 +220,37 @@ func (o *DamUpdateAssetRequest) UnmarshalJSON(data []byte) (err error) {
 
 	*o = DamUpdateAssetRequest(varDamUpdateAssetRequest)
 
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "payload")
+		delete(additionalProperties, "payloadMask")
+		o.AdditionalProperties = additionalProperties
+	}
+
 	return err
 }
 
+// GetValue returns the value of well-known types
+func (o *DamUpdateAssetRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *DamUpdateAssetRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableDamUpdateAssetRequest struct {
 	value *DamUpdateAssetRequest
 	isSet bool

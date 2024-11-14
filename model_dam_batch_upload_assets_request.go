@@ -13,7 +13,6 @@ package dam
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -24,6 +23,7 @@ var _ MappedNullable = &DamBatchUploadAssetsRequest{}
 type DamBatchUploadAssetsRequest struct {
 	TenantId string `json:"tenantId"`
 	Files []BatchUploadAssetsRequestFiles `json:"files"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _DamBatchUploadAssetsRequest DamBatchUploadAssetsRequest
@@ -107,6 +107,11 @@ func (o DamBatchUploadAssetsRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["tenantId"] = o.TenantId
 	toSerialize["files"] = o.Files
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -135,9 +140,7 @@ func (o *DamBatchUploadAssetsRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varDamBatchUploadAssetsRequest := _DamBatchUploadAssetsRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varDamBatchUploadAssetsRequest)
+	err = json.Unmarshal(data, &varDamBatchUploadAssetsRequest)
 
 	if err != nil {
 		return err
@@ -145,9 +148,35 @@ func (o *DamBatchUploadAssetsRequest) UnmarshalJSON(data []byte) (err error) {
 
 	*o = DamBatchUploadAssetsRequest(varDamBatchUploadAssetsRequest)
 
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "files")
+		o.AdditionalProperties = additionalProperties
+	}
+
 	return err
 }
 
+// GetValue returns the value of well-known types
+func (o *DamBatchUploadAssetsRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *DamBatchUploadAssetsRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableDamBatchUploadAssetsRequest struct {
 	value *DamBatchUploadAssetsRequest
 	isSet bool

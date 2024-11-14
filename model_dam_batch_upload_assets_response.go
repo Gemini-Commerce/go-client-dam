@@ -21,7 +21,10 @@ var _ MappedNullable = &DamBatchUploadAssetsResponse{}
 // DamBatchUploadAssetsResponse struct for DamBatchUploadAssetsResponse
 type DamBatchUploadAssetsResponse struct {
 	PreSignedUrls []string `json:"preSignedUrls,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _DamBatchUploadAssetsResponse DamBatchUploadAssetsResponse
 
 // NewDamBatchUploadAssetsResponse instantiates a new DamBatchUploadAssetsResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -58,8 +61,8 @@ func (o *DamBatchUploadAssetsResponse) GetPreSignedUrlsOk() ([]string, bool) {
 	return o.PreSignedUrls, true
 }
 
-// HasPreSignedUrls returns a boolean if a field has been set.
-func (o *DamBatchUploadAssetsResponse) HasPreSignedUrls() bool {
+// &#39;Has&#39;PreSignedUrls returns a boolean if a field has been set.
+func (o *DamBatchUploadAssetsResponse) &#39;Has&#39;PreSignedUrls() bool {
 	if o != nil && !IsNil(o.PreSignedUrls) {
 		return true
 	}
@@ -85,9 +88,53 @@ func (o DamBatchUploadAssetsResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.PreSignedUrls) {
 		toSerialize["preSignedUrls"] = o.PreSignedUrls
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *DamBatchUploadAssetsResponse) UnmarshalJSON(data []byte) (err error) {
+	varDamBatchUploadAssetsResponse := _DamBatchUploadAssetsResponse{}
+
+	err = json.Unmarshal(data, &varDamBatchUploadAssetsResponse)
+
+	if err != nil {
+		return err
+	}
+
+	*o = DamBatchUploadAssetsResponse(varDamBatchUploadAssetsResponse)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "preSignedUrls")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *DamBatchUploadAssetsResponse) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *DamBatchUploadAssetsResponse) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableDamBatchUploadAssetsResponse struct {
 	value *DamBatchUploadAssetsResponse
 	isSet bool

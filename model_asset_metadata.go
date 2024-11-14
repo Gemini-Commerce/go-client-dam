@@ -22,7 +22,10 @@ var _ MappedNullable = &AssetMetadata{}
 type AssetMetadata struct {
 	Key *string `json:"key,omitempty"`
 	Value *string `json:"value,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AssetMetadata AssetMetadata
 
 // NewAssetMetadata instantiates a new AssetMetadata object
 // This constructor will assign default values to properties that have it defined,
@@ -59,8 +62,8 @@ func (o *AssetMetadata) GetKeyOk() (*string, bool) {
 	return o.Key, true
 }
 
-// HasKey returns a boolean if a field has been set.
-func (o *AssetMetadata) HasKey() bool {
+// &#39;Has&#39;Key returns a boolean if a field has been set.
+func (o *AssetMetadata) &#39;Has&#39;Key() bool {
 	if o != nil && !IsNil(o.Key) {
 		return true
 	}
@@ -91,8 +94,8 @@ func (o *AssetMetadata) GetValueOk() (*string, bool) {
 	return o.Value, true
 }
 
-// HasValue returns a boolean if a field has been set.
-func (o *AssetMetadata) HasValue() bool {
+// &#39;Has&#39;Value returns a boolean if a field has been set.
+func (o *AssetMetadata) &#39;Has&#39;Value() bool {
 	if o != nil && !IsNil(o.Value) {
 		return true
 	}
@@ -121,9 +124,54 @@ func (o AssetMetadata) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Value) {
 		toSerialize["value"] = o.Value
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *AssetMetadata) UnmarshalJSON(data []byte) (err error) {
+	varAssetMetadata := _AssetMetadata{}
+
+	err = json.Unmarshal(data, &varAssetMetadata)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AssetMetadata(varAssetMetadata)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "key")
+		delete(additionalProperties, "value")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *AssetMetadata) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *AssetMetadata) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableAssetMetadata struct {
 	value *AssetMetadata
 	isSet bool

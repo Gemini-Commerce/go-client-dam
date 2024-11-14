@@ -21,7 +21,10 @@ var _ MappedNullable = &DamListAssetsByCodesResponse{}
 // DamListAssetsByCodesResponse struct for DamListAssetsByCodesResponse
 type DamListAssetsByCodesResponse struct {
 	Assets []DamAsset `json:"assets,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _DamListAssetsByCodesResponse DamListAssetsByCodesResponse
 
 // NewDamListAssetsByCodesResponse instantiates a new DamListAssetsByCodesResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -58,8 +61,8 @@ func (o *DamListAssetsByCodesResponse) GetAssetsOk() ([]DamAsset, bool) {
 	return o.Assets, true
 }
 
-// HasAssets returns a boolean if a field has been set.
-func (o *DamListAssetsByCodesResponse) HasAssets() bool {
+// &#39;Has&#39;Assets returns a boolean if a field has been set.
+func (o *DamListAssetsByCodesResponse) &#39;Has&#39;Assets() bool {
 	if o != nil && !IsNil(o.Assets) {
 		return true
 	}
@@ -85,9 +88,53 @@ func (o DamListAssetsByCodesResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Assets) {
 		toSerialize["assets"] = o.Assets
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *DamListAssetsByCodesResponse) UnmarshalJSON(data []byte) (err error) {
+	varDamListAssetsByCodesResponse := _DamListAssetsByCodesResponse{}
+
+	err = json.Unmarshal(data, &varDamListAssetsByCodesResponse)
+
+	if err != nil {
+		return err
+	}
+
+	*o = DamListAssetsByCodesResponse(varDamListAssetsByCodesResponse)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "assets")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *DamListAssetsByCodesResponse) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *DamListAssetsByCodesResponse) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableDamListAssetsByCodesResponse struct {
 	value *DamListAssetsByCodesResponse
 	isSet bool

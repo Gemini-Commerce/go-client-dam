@@ -13,7 +13,6 @@ package dam
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -25,6 +24,7 @@ type BatchUploadAssetsRequestFiles struct {
 	Filename string `json:"filename"`
 	Size string `json:"size"`
 	MimeType string `json:"mimeType"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _BatchUploadAssetsRequestFiles BatchUploadAssetsRequestFiles
@@ -134,6 +134,11 @@ func (o BatchUploadAssetsRequestFiles) ToMap() (map[string]interface{}, error) {
 	toSerialize["filename"] = o.Filename
 	toSerialize["size"] = o.Size
 	toSerialize["mimeType"] = o.MimeType
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -163,9 +168,7 @@ func (o *BatchUploadAssetsRequestFiles) UnmarshalJSON(data []byte) (err error) {
 
 	varBatchUploadAssetsRequestFiles := _BatchUploadAssetsRequestFiles{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varBatchUploadAssetsRequestFiles)
+	err = json.Unmarshal(data, &varBatchUploadAssetsRequestFiles)
 
 	if err != nil {
 		return err
@@ -173,9 +176,36 @@ func (o *BatchUploadAssetsRequestFiles) UnmarshalJSON(data []byte) (err error) {
 
 	*o = BatchUploadAssetsRequestFiles(varBatchUploadAssetsRequestFiles)
 
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "filename")
+		delete(additionalProperties, "size")
+		delete(additionalProperties, "mimeType")
+		o.AdditionalProperties = additionalProperties
+	}
+
 	return err
 }
 
+// GetValue returns the value of well-known types
+func (o *BatchUploadAssetsRequestFiles) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *BatchUploadAssetsRequestFiles) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableBatchUploadAssetsRequestFiles struct {
 	value *BatchUploadAssetsRequestFiles
 	isSet bool

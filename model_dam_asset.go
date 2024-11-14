@@ -29,7 +29,10 @@ type DamAsset struct {
 	Metadata []AssetMetadata `json:"metadata,omitempty"`
 	Grn *string `json:"grn,omitempty"`
 	PublicUrl *string `json:"publicUrl,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _DamAsset DamAsset
 
 // NewDamAsset instantiates a new DamAsset object
 // This constructor will assign default values to properties that have it defined,
@@ -70,8 +73,8 @@ func (o *DamAsset) GetCreatedAtOk() (*time.Time, bool) {
 	return o.CreatedAt, true
 }
 
-// HasCreatedAt returns a boolean if a field has been set.
-func (o *DamAsset) HasCreatedAt() bool {
+// &#39;Has&#39;CreatedAt returns a boolean if a field has been set.
+func (o *DamAsset) &#39;Has&#39;CreatedAt() bool {
 	if o != nil && !IsNil(o.CreatedAt) {
 		return true
 	}
@@ -102,8 +105,8 @@ func (o *DamAsset) GetUpdatedAtOk() (*time.Time, bool) {
 	return o.UpdatedAt, true
 }
 
-// HasUpdatedAt returns a boolean if a field has been set.
-func (o *DamAsset) HasUpdatedAt() bool {
+// &#39;Has&#39;UpdatedAt returns a boolean if a field has been set.
+func (o *DamAsset) &#39;Has&#39;UpdatedAt() bool {
 	if o != nil && !IsNil(o.UpdatedAt) {
 		return true
 	}
@@ -134,8 +137,8 @@ func (o *DamAsset) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *DamAsset) HasId() bool {
+// &#39;Has&#39;Id returns a boolean if a field has been set.
+func (o *DamAsset) &#39;Has&#39;Id() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -166,8 +169,8 @@ func (o *DamAsset) GetTypeOk() (*DamAssetType, bool) {
 	return o.Type, true
 }
 
-// HasType returns a boolean if a field has been set.
-func (o *DamAsset) HasType() bool {
+// &#39;Has&#39;Type returns a boolean if a field has been set.
+func (o *DamAsset) &#39;Has&#39;Type() bool {
 	if o != nil && !IsNil(o.Type) {
 		return true
 	}
@@ -198,8 +201,8 @@ func (o *DamAsset) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// HasCode returns a boolean if a field has been set.
-func (o *DamAsset) HasCode() bool {
+// &#39;Has&#39;Code returns a boolean if a field has been set.
+func (o *DamAsset) &#39;Has&#39;Code() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -230,8 +233,8 @@ func (o *DamAsset) GetMetadataOk() ([]AssetMetadata, bool) {
 	return o.Metadata, true
 }
 
-// HasMetadata returns a boolean if a field has been set.
-func (o *DamAsset) HasMetadata() bool {
+// &#39;Has&#39;Metadata returns a boolean if a field has been set.
+func (o *DamAsset) &#39;Has&#39;Metadata() bool {
 	if o != nil && !IsNil(o.Metadata) {
 		return true
 	}
@@ -262,8 +265,8 @@ func (o *DamAsset) GetGrnOk() (*string, bool) {
 	return o.Grn, true
 }
 
-// HasGrn returns a boolean if a field has been set.
-func (o *DamAsset) HasGrn() bool {
+// &#39;Has&#39;Grn returns a boolean if a field has been set.
+func (o *DamAsset) &#39;Has&#39;Grn() bool {
 	if o != nil && !IsNil(o.Grn) {
 		return true
 	}
@@ -294,8 +297,8 @@ func (o *DamAsset) GetPublicUrlOk() (*string, bool) {
 	return o.PublicUrl, true
 }
 
-// HasPublicUrl returns a boolean if a field has been set.
-func (o *DamAsset) HasPublicUrl() bool {
+// &#39;Has&#39;PublicUrl returns a boolean if a field has been set.
+func (o *DamAsset) &#39;Has&#39;PublicUrl() bool {
 	if o != nil && !IsNil(o.PublicUrl) {
 		return true
 	}
@@ -342,9 +345,60 @@ func (o DamAsset) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.PublicUrl) {
 		toSerialize["publicUrl"] = o.PublicUrl
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
+func (o *DamAsset) UnmarshalJSON(data []byte) (err error) {
+	varDamAsset := _DamAsset{}
+
+	err = json.Unmarshal(data, &varDamAsset)
+
+	if err != nil {
+		return err
+	}
+
+	*o = DamAsset(varDamAsset)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "createdAt")
+		delete(additionalProperties, "updatedAt")
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "metadata")
+		delete(additionalProperties, "grn")
+		delete(additionalProperties, "publicUrl")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// GetValue returns the value of well-known types
+func (o *DamAsset) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *DamAsset) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableDamAsset struct {
 	value *DamAsset
 	isSet bool

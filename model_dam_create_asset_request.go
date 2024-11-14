@@ -13,7 +13,6 @@ package dam
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -27,6 +26,7 @@ type DamCreateAssetRequest struct {
 	Code string `json:"code"`
 	Metadata []AssetMetadata `json:"metadata,omitempty"`
 	Origin DamAssetOrigin `json:"origin"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _DamCreateAssetRequest DamCreateAssetRequest
@@ -144,8 +144,8 @@ func (o *DamCreateAssetRequest) GetMetadataOk() ([]AssetMetadata, bool) {
 	return o.Metadata, true
 }
 
-// HasMetadata returns a boolean if a field has been set.
-func (o *DamCreateAssetRequest) HasMetadata() bool {
+// &#39;Has&#39;Metadata returns a boolean if a field has been set.
+func (o *DamCreateAssetRequest) &#39;Has&#39;Metadata() bool {
 	if o != nil && !IsNil(o.Metadata) {
 		return true
 	}
@@ -199,6 +199,11 @@ func (o DamCreateAssetRequest) ToMap() (map[string]interface{}, error) {
 		toSerialize["metadata"] = o.Metadata
 	}
 	toSerialize["origin"] = o.Origin
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -229,9 +234,7 @@ func (o *DamCreateAssetRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varDamCreateAssetRequest := _DamCreateAssetRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varDamCreateAssetRequest)
+	err = json.Unmarshal(data, &varDamCreateAssetRequest)
 
 	if err != nil {
 		return err
@@ -239,9 +242,38 @@ func (o *DamCreateAssetRequest) UnmarshalJSON(data []byte) (err error) {
 
 	*o = DamCreateAssetRequest(varDamCreateAssetRequest)
 
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "metadata")
+		delete(additionalProperties, "origin")
+		o.AdditionalProperties = additionalProperties
+	}
+
 	return err
 }
 
+// GetValue returns the value of well-known types
+func (o *DamCreateAssetRequest) GetValue() interface{} {
+	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+		return nil
+	}
+	return o.AdditionalProperties["value"]
+}
+// SetValue populate the value of well-known types
+func (o *DamCreateAssetRequest) SetValue(value interface{}) {
+	if o == nil || IsNil(o.Type) || IsNil(value) {
+		return
+	}
+    if IsNil(o.AdditionalProperties) {
+        o.AdditionalProperties = map[string]interface{}{}
+    }
+	o.AdditionalProperties["value"] = value
+	return
+}
 type NullableDamCreateAssetRequest struct {
 	value *DamCreateAssetRequest
 	isSet bool
