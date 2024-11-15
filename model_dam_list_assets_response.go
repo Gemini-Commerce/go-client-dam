@@ -63,8 +63,8 @@ func (o *DamListAssetsResponse) GetAssetsOk() ([]DamAsset, bool) {
 	return o.Assets, true
 }
 
-// &#39;Has&#39;Assets returns a boolean if a field has been set.
-func (o *DamListAssetsResponse) &#39;Has&#39;Assets() bool {
+// HasAssets returns a boolean if a field has been set.
+func (o *DamListAssetsResponse) HasAssets() bool {
 	if o != nil && !IsNil(o.Assets) {
 		return true
 	}
@@ -95,8 +95,8 @@ func (o *DamListAssetsResponse) GetNextPageTokenOk() (*string, bool) {
 	return o.NextPageToken, true
 }
 
-// &#39;Has&#39;NextPageToken returns a boolean if a field has been set.
-func (o *DamListAssetsResponse) &#39;Has&#39;NextPageToken() bool {
+// HasNextPageToken returns a boolean if a field has been set.
+func (o *DamListAssetsResponse) HasNextPageToken() bool {
 	if o != nil && !IsNil(o.NextPageToken) {
 		return true
 	}

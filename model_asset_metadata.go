@@ -62,8 +62,8 @@ func (o *AssetMetadata) GetKeyOk() (*string, bool) {
 	return o.Key, true
 }
 
-// &#39;Has&#39;Key returns a boolean if a field has been set.
-func (o *AssetMetadata) &#39;Has&#39;Key() bool {
+// HasKey returns a boolean if a field has been set.
+func (o *AssetMetadata) HasKey() bool {
 	if o != nil && !IsNil(o.Key) {
 		return true
 	}
@@ -94,8 +94,8 @@ func (o *AssetMetadata) GetValueOk() (*string, bool) {
 	return o.Value, true
 }
 
-// &#39;Has&#39;Value returns a boolean if a field has been set.
-func (o *AssetMetadata) &#39;Has&#39;Value() bool {
+// HasValue returns a boolean if a field has been set.
+func (o *AssetMetadata) HasValue() bool {
 	if o != nil && !IsNil(o.Value) {
 		return true
 	}

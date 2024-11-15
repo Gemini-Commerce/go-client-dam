@@ -65,8 +65,8 @@ func (o *UpdateAssetRequestPayload) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// &#39;Has&#39;Code returns a boolean if a field has been set.
-func (o *UpdateAssetRequestPayload) &#39;Has&#39;Code() bool {
+// HasCode returns a boolean if a field has been set.
+func (o *UpdateAssetRequestPayload) HasCode() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -121,8 +121,8 @@ func (o *UpdateAssetRequestPayload) GetMetadataOk() ([]AssetMetadata, bool) {
 	return o.Metadata, true
 }
 
-// &#39;Has&#39;Metadata returns a boolean if a field has been set.
-func (o *UpdateAssetRequestPayload) &#39;Has&#39;Metadata() bool {
+// HasMetadata returns a boolean if a field has been set.
+func (o *UpdateAssetRequestPayload) HasMetadata() bool {
 	if o != nil && !IsNil(o.Metadata) {
 		return true
 	}

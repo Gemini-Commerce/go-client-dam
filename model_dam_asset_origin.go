@@ -66,8 +66,8 @@ func (o *DamAssetOrigin) GetUrlOk() (*string, bool) {
 	return o.Url, true
 }
 
-// &#39;Has&#39;Url returns a boolean if a field has been set.
-func (o *DamAssetOrigin) &#39;Has&#39;Url() bool {
+// HasUrl returns a boolean if a field has been set.
+func (o *DamAssetOrigin) HasUrl() bool {
 	if o != nil && !IsNil(o.Url) {
 		return true
 	}
@@ -98,8 +98,8 @@ func (o *DamAssetOrigin) GetTypeOk() (*AssetOriginTypes, bool) {
 	return o.Type, true
 }
 
-// &#39;Has&#39;Type returns a boolean if a field has been set.
-func (o *DamAssetOrigin) &#39;Has&#39;Type() bool {
+// HasType returns a boolean if a field has been set.
+func (o *DamAssetOrigin) HasType() bool {
 	if o != nil && !IsNil(o.Type) {
 		return true
 	}

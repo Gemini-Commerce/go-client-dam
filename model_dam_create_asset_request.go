@@ -144,8 +144,8 @@ func (o *DamCreateAssetRequest) GetMetadataOk() ([]AssetMetadata, bool) {
 	return o.Metadata, true
 }
 
-// &#39;Has&#39;Metadata returns a boolean if a field has been set.
-func (o *DamCreateAssetRequest) &#39;Has&#39;Metadata() bool {
+// HasMetadata returns a boolean if a field has been set.
+func (o *DamCreateAssetRequest) HasMetadata() bool {
 	if o != nil && !IsNil(o.Metadata) {
 		return true
 	}

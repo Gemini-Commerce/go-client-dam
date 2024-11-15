@@ -73,8 +73,8 @@ func (o *DamAsset) GetCreatedAtOk() (*time.Time, bool) {
 	return o.CreatedAt, true
 }
 
-// &#39;Has&#39;CreatedAt returns a boolean if a field has been set.
-func (o *DamAsset) &#39;Has&#39;CreatedAt() bool {
+// HasCreatedAt returns a boolean if a field has been set.
+func (o *DamAsset) HasCreatedAt() bool {
 	if o != nil && !IsNil(o.CreatedAt) {
 		return true
 	}
@@ -105,8 +105,8 @@ func (o *DamAsset) GetUpdatedAtOk() (*time.Time, bool) {
 	return o.UpdatedAt, true
 }
 
-// &#39;Has&#39;UpdatedAt returns a boolean if a field has been set.
-func (o *DamAsset) &#39;Has&#39;UpdatedAt() bool {
+// HasUpdatedAt returns a boolean if a field has been set.
+func (o *DamAsset) HasUpdatedAt() bool {
 	if o != nil && !IsNil(o.UpdatedAt) {
 		return true
 	}
@@ -137,8 +137,8 @@ func (o *DamAsset) GetIdOk() (*string, bool) {
 	return o.Id, true
 }
 
-// &#39;Has&#39;Id returns a boolean if a field has been set.
-func (o *DamAsset) &#39;Has&#39;Id() bool {
+// HasId returns a boolean if a field has been set.
+func (o *DamAsset) HasId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -169,8 +169,8 @@ func (o *DamAsset) GetTypeOk() (*DamAssetType, bool) {
 	return o.Type, true
 }
 
-// &#39;Has&#39;Type returns a boolean if a field has been set.
-func (o *DamAsset) &#39;Has&#39;Type() bool {
+// HasType returns a boolean if a field has been set.
+func (o *DamAsset) HasType() bool {
 	if o != nil && !IsNil(o.Type) {
 		return true
 	}
@@ -201,8 +201,8 @@ func (o *DamAsset) GetCodeOk() (*string, bool) {
 	return o.Code, true
 }
 
-// &#39;Has&#39;Code returns a boolean if a field has been set.
-func (o *DamAsset) &#39;Has&#39;Code() bool {
+// HasCode returns a boolean if a field has been set.
+func (o *DamAsset) HasCode() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -233,8 +233,8 @@ func (o *DamAsset) GetMetadataOk() ([]AssetMetadata, bool) {
 	return o.Metadata, true
 }
 
-// &#39;Has&#39;Metadata returns a boolean if a field has been set.
-func (o *DamAsset) &#39;Has&#39;Metadata() bool {
+// HasMetadata returns a boolean if a field has been set.
+func (o *DamAsset) HasMetadata() bool {
 	if o != nil && !IsNil(o.Metadata) {
 		return true
 	}
@@ -265,8 +265,8 @@ func (o *DamAsset) GetGrnOk() (*string, bool) {
 	return o.Grn, true
 }
 
-// &#39;Has&#39;Grn returns a boolean if a field has been set.
-func (o *DamAsset) &#39;Has&#39;Grn() bool {
+// HasGrn returns a boolean if a field has been set.
+func (o *DamAsset) HasGrn() bool {
 	if o != nil && !IsNil(o.Grn) {
 		return true
 	}
@@ -297,8 +297,8 @@ func (o *DamAsset) GetPublicUrlOk() (*string, bool) {
 	return o.PublicUrl, true
 }
 
-// &#39;Has&#39;PublicUrl returns a boolean if a field has been set.
-func (o *DamAsset) &#39;Has&#39;PublicUrl() bool {
+// HasPublicUrl returns a boolean if a field has been set.
+func (o *DamAsset) HasPublicUrl() bool {
 	if o != nil && !IsNil(o.PublicUrl) {
 		return true
 	}

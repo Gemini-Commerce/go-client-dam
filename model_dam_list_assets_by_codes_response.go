@@ -61,8 +61,8 @@ func (o *DamListAssetsByCodesResponse) GetAssetsOk() ([]DamAsset, bool) {
 	return o.Assets, true
 }
 
-// &#39;Has&#39;Assets returns a boolean if a field has been set.
-func (o *DamListAssetsByCodesResponse) &#39;Has&#39;Assets() bool {
+// HasAssets returns a boolean if a field has been set.
+func (o *DamListAssetsByCodesResponse) HasAssets() bool {
 	if o != nil && !IsNil(o.Assets) {
 		return true
 	}

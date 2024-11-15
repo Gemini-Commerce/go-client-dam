@@ -61,8 +61,8 @@ func (o *DamBatchUploadAssetsResponse) GetPreSignedUrlsOk() ([]string, bool) {
 	return o.PreSignedUrls, true
 }
 
-// &#39;Has&#39;PreSignedUrls returns a boolean if a field has been set.
-func (o *DamBatchUploadAssetsResponse) &#39;Has&#39;PreSignedUrls() bool {
+// HasPreSignedUrls returns a boolean if a field has been set.
+func (o *DamBatchUploadAssetsResponse) HasPreSignedUrls() bool {
 	if o != nil && !IsNil(o.PreSignedUrls) {
 		return true
 	}
