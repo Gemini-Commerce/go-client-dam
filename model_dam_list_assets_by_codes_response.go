@@ -20,7 +20,7 @@ var _ MappedNullable = &DamListAssetsByCodesResponse{}
 
 // DamListAssetsByCodesResponse struct for DamListAssetsByCodesResponse
 type DamListAssetsByCodesResponse struct {
-	Assets []DamAsset `json:"assets,omitempty"`
+	Assets               []DamAsset `json:"assets,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *DamListAssetsByCodesResponse) SetAssets(v []DamAsset) {
 }
 
 func (o DamListAssetsByCodesResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -119,22 +119,24 @@ func (o *DamListAssetsByCodesResponse) UnmarshalJSON(data []byte) (err error) {
 
 // GetValue returns the value of well-known types
 func (o *DamListAssetsByCodesResponse) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
-// SetValue populate the value of well-known types
+
+// SetValue populates the value of well-known types
 func (o *DamListAssetsByCodesResponse) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableDamListAssetsByCodesResponse struct {
 	value *DamListAssetsByCodesResponse
 	isSet bool
@@ -170,5 +172,3 @@ func (v *NullableDamListAssetsByCodesResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

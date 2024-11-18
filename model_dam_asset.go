@@ -21,14 +21,14 @@ var _ MappedNullable = &DamAsset{}
 
 // DamAsset struct for DamAsset
 type DamAsset struct {
-	CreatedAt *time.Time `json:"createdAt,omitempty"`
-	UpdatedAt *time.Time `json:"updatedAt,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Type *DamAssetType `json:"type,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Metadata []AssetMetadata `json:"metadata,omitempty"`
-	Grn *string `json:"grn,omitempty"`
-	PublicUrl *string `json:"publicUrl,omitempty"`
+	CreatedAt            *time.Time      `json:"createdAt,omitempty"`
+	UpdatedAt            *time.Time      `json:"updatedAt,omitempty"`
+	Id                   *string         `json:"id,omitempty"`
+	Type                 *DamAssetType   `json:"type,omitempty"`
+	Code                 *string         `json:"code,omitempty"`
+	Metadata             []AssetMetadata `json:"metadata,omitempty"`
+	Grn                  *string         `json:"grn,omitempty"`
+	PublicUrl            *string         `json:"publicUrl,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -312,7 +312,7 @@ func (o *DamAsset) SetPublicUrl(v string) {
 }
 
 func (o DamAsset) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -383,22 +383,24 @@ func (o *DamAsset) UnmarshalJSON(data []byte) (err error) {
 
 // GetValue returns the value of well-known types
 func (o *DamAsset) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
-// SetValue populate the value of well-known types
+
+// SetValue populates the value of well-known types
 func (o *DamAsset) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableDamAsset struct {
 	value *DamAsset
 	isSet bool
@@ -434,5 +436,3 @@ func (v *NullableDamAsset) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

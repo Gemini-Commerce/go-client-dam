@@ -19,14 +19,184 @@ import (
 	"net/url"
 )
 
+type BasicOperationsAPI interface {
+
+	/*
+		BatchUploadAssets Batch Upload Assets
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiBatchUploadAssetsRequest
+	*/
+	BatchUploadAssets(ctx context.Context) ApiBatchUploadAssetsRequest
+
+	// BatchUploadAssetsExecute executes the request
+	//  @return DamBatchUploadAssetsResponse
+	BatchUploadAssetsExecute(r ApiBatchUploadAssetsRequest) (*DamBatchUploadAssetsResponse, *http.Response, error)
+
+	/*
+		BatchUploadAssets_0 Batch Upload Assets
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiBatchUploadAssets_0Request
+	*/
+	BatchUploadAssets_1(ctx context.Context) ApiBatchUploadAssets_0Request
+
+	// BatchUploadAssets_1Execute executes the request
+	//  @return DamBatchUploadAssetsResponse
+	BatchUploadAssets_1Execute(r ApiBatchUploadAssets_0Request) (*DamBatchUploadAssetsResponse, *http.Response, error)
+
+	/*
+		CreateAsset Create Asset
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiCreateAssetRequest
+	*/
+	CreateAsset(ctx context.Context) ApiCreateAssetRequest
+
+	// CreateAssetExecute executes the request
+	//  @return DamAsset
+	CreateAssetExecute(r ApiCreateAssetRequest) (*DamAsset, *http.Response, error)
+
+	/*
+		CreateAsset_0 Create Asset
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiCreateAsset_0Request
+	*/
+	CreateAsset_2(ctx context.Context) ApiCreateAsset_0Request
+
+	// CreateAsset_2Execute executes the request
+	//  @return DamAsset
+	CreateAsset_2Execute(r ApiCreateAsset_0Request) (*DamAsset, *http.Response, error)
+
+	/*
+		GetAssetByCode Get Asset By Code
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetAssetByCodeRequest
+	*/
+	GetAssetByCode(ctx context.Context) ApiGetAssetByCodeRequest
+
+	// GetAssetByCodeExecute executes the request
+	//  @return DamAsset
+	GetAssetByCodeExecute(r ApiGetAssetByCodeRequest) (*DamAsset, *http.Response, error)
+
+	/*
+		GetAssetByCode_0 Get Asset By Code
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetAssetByCode_0Request
+	*/
+	GetAssetByCode_3(ctx context.Context) ApiGetAssetByCode_0Request
+
+	// GetAssetByCode_3Execute executes the request
+	//  @return DamAsset
+	GetAssetByCode_3Execute(r ApiGetAssetByCode_0Request) (*DamAsset, *http.Response, error)
+
+	/*
+		ListAssets List Assets
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiListAssetsRequest
+	*/
+	ListAssets(ctx context.Context) ApiListAssetsRequest
+
+	// ListAssetsExecute executes the request
+	//  @return DamListAssetsResponse
+	ListAssetsExecute(r ApiListAssetsRequest) (*DamListAssetsResponse, *http.Response, error)
+
+	/*
+		ListAssetsByCodes List Assets By Codes
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiListAssetsByCodesRequest
+	*/
+	ListAssetsByCodes(ctx context.Context) ApiListAssetsByCodesRequest
+
+	// ListAssetsByCodesExecute executes the request
+	//  @return DamListAssetsByCodesResponse
+	ListAssetsByCodesExecute(r ApiListAssetsByCodesRequest) (*DamListAssetsByCodesResponse, *http.Response, error)
+
+	/*
+		ListAssetsByCodes_0 List Assets By Codes
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiListAssetsByCodes_0Request
+	*/
+	ListAssetsByCodes_4(ctx context.Context) ApiListAssetsByCodes_0Request
+
+	// ListAssetsByCodes_4Execute executes the request
+	//  @return DamListAssetsByCodesResponse
+	ListAssetsByCodes_4Execute(r ApiListAssetsByCodes_0Request) (*DamListAssetsByCodesResponse, *http.Response, error)
+
+	/*
+		ListAssetsByIds List Assets By Ids
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiListAssetsByIdsRequest
+	*/
+	ListAssetsByIds(ctx context.Context) ApiListAssetsByIdsRequest
+
+	// ListAssetsByIdsExecute executes the request
+	//  @return DamListAssetsByIdsResponse
+	ListAssetsByIdsExecute(r ApiListAssetsByIdsRequest) (*DamListAssetsByIdsResponse, *http.Response, error)
+
+	/*
+		ListAssetsByIds_0 List Assets By Ids
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiListAssetsByIds_0Request
+	*/
+	ListAssetsByIds_5(ctx context.Context) ApiListAssetsByIds_0Request
+
+	// ListAssetsByIds_5Execute executes the request
+	//  @return DamListAssetsByIdsResponse
+	ListAssetsByIds_5Execute(r ApiListAssetsByIds_0Request) (*DamListAssetsByIdsResponse, *http.Response, error)
+
+	/*
+		ListAssets_0 List Assets
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiListAssets_0Request
+	*/
+	ListAssets_6(ctx context.Context) ApiListAssets_0Request
+
+	// ListAssets_6Execute executes the request
+	//  @return DamListAssetsResponse
+	ListAssets_6Execute(r ApiListAssets_0Request) (*DamListAssetsResponse, *http.Response, error)
+
+	/*
+		UpdateAsset Update Asset
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiUpdateAssetRequest
+	*/
+	UpdateAsset(ctx context.Context) ApiUpdateAssetRequest
+
+	// UpdateAssetExecute executes the request
+	//  @return DamAsset
+	UpdateAssetExecute(r ApiUpdateAssetRequest) (*DamAsset, *http.Response, error)
+
+	/*
+		UpdateAsset_0 Update Asset
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiUpdateAsset_0Request
+	*/
+	UpdateAsset_7(ctx context.Context) ApiUpdateAsset_0Request
+
+	// UpdateAsset_7Execute executes the request
+	//  @return DamAsset
+	UpdateAsset_7Execute(r ApiUpdateAsset_0Request) (*DamAsset, *http.Response, error)
+}
 
 // BasicOperationsAPIService BasicOperationsAPI service
 type BasicOperationsAPIService service
 
 type ApiBatchUploadAssetsRequest struct {
-	ctx context.Context
-	ApiService *BasicOperationsAPIService
-	body *DamBatchUploadAssetsRequest
+	ctx        context.Context
+	ApiService BasicOperationsAPI
+	body       *DamBatchUploadAssetsRequest
 }
 
 func (r ApiBatchUploadAssetsRequest) Body(body DamBatchUploadAssetsRequest) ApiBatchUploadAssetsRequest {
@@ -41,24 +211,25 @@ func (r ApiBatchUploadAssetsRequest) Execute() (*DamBatchUploadAssetsResponse, *
 /*
 BatchUploadAssets Batch Upload Assets
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiBatchUploadAssetsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiBatchUploadAssetsRequest
 */
 func (a *BasicOperationsAPIService) BatchUploadAssets(ctx context.Context) ApiBatchUploadAssetsRequest {
 	return ApiBatchUploadAssetsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DamBatchUploadAssetsResponse
+//
+//	@return DamBatchUploadAssetsResponse
 func (a *BasicOperationsAPIService) BatchUploadAssetsExecute(r ApiBatchUploadAssetsRequest) (*DamBatchUploadAssetsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DamBatchUploadAssetsResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DamBatchUploadAssetsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BasicOperationsAPIService.BatchUploadAssets")
@@ -123,8 +294,8 @@ func (a *BasicOperationsAPIService) BatchUploadAssetsExecute(r ApiBatchUploadAss
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -134,18 +305,18 @@ func (a *BasicOperationsAPIService) BatchUploadAssetsExecute(r ApiBatchUploadAss
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -162,9 +333,9 @@ func (a *BasicOperationsAPIService) BatchUploadAssetsExecute(r ApiBatchUploadAss
 }
 
 type ApiBatchUploadAssets_0Request struct {
-	ctx context.Context
-	ApiService *BasicOperationsAPIService
-	body *DamBatchUploadAssetsRequest
+	ctx        context.Context
+	ApiService BasicOperationsAPI
+	body       *DamBatchUploadAssetsRequest
 }
 
 func (r ApiBatchUploadAssets_0Request) Body(body DamBatchUploadAssetsRequest) ApiBatchUploadAssets_0Request {
@@ -179,24 +350,25 @@ func (r ApiBatchUploadAssets_0Request) Execute() (*DamBatchUploadAssetsResponse,
 /*
 BatchUploadAssets_0 Batch Upload Assets
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiBatchUploadAssets_0Request
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiBatchUploadAssets_0Request
 */
 func (a *BasicOperationsAPIService) BatchUploadAssets_1(ctx context.Context) ApiBatchUploadAssets_0Request {
 	return ApiBatchUploadAssets_0Request{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DamBatchUploadAssetsResponse
+//
+//	@return DamBatchUploadAssetsResponse
 func (a *BasicOperationsAPIService) BatchUploadAssets_1Execute(r ApiBatchUploadAssets_0Request) (*DamBatchUploadAssetsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DamBatchUploadAssetsResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DamBatchUploadAssetsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BasicOperationsAPIService.BatchUploadAssets_1")
@@ -261,8 +433,8 @@ func (a *BasicOperationsAPIService) BatchUploadAssets_1Execute(r ApiBatchUploadA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -272,18 +444,18 @@ func (a *BasicOperationsAPIService) BatchUploadAssets_1Execute(r ApiBatchUploadA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -300,9 +472,9 @@ func (a *BasicOperationsAPIService) BatchUploadAssets_1Execute(r ApiBatchUploadA
 }
 
 type ApiCreateAssetRequest struct {
-	ctx context.Context
-	ApiService *BasicOperationsAPIService
-	body *DamCreateAssetRequest
+	ctx        context.Context
+	ApiService BasicOperationsAPI
+	body       *DamCreateAssetRequest
 }
 
 func (r ApiCreateAssetRequest) Body(body DamCreateAssetRequest) ApiCreateAssetRequest {
@@ -317,24 +489,25 @@ func (r ApiCreateAssetRequest) Execute() (*DamAsset, *http.Response, error) {
 /*
 CreateAsset Create Asset
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateAssetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateAssetRequest
 */
 func (a *BasicOperationsAPIService) CreateAsset(ctx context.Context) ApiCreateAssetRequest {
 	return ApiCreateAssetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DamAsset
+//
+//	@return DamAsset
 func (a *BasicOperationsAPIService) CreateAssetExecute(r ApiCreateAssetRequest) (*DamAsset, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DamAsset
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DamAsset
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BasicOperationsAPIService.CreateAsset")
@@ -399,8 +572,8 @@ func (a *BasicOperationsAPIService) CreateAssetExecute(r ApiCreateAssetRequest) 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -410,18 +583,18 @@ func (a *BasicOperationsAPIService) CreateAssetExecute(r ApiCreateAssetRequest) 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -438,9 +611,9 @@ func (a *BasicOperationsAPIService) CreateAssetExecute(r ApiCreateAssetRequest) 
 }
 
 type ApiCreateAsset_0Request struct {
-	ctx context.Context
-	ApiService *BasicOperationsAPIService
-	body *DamCreateAssetRequest
+	ctx        context.Context
+	ApiService BasicOperationsAPI
+	body       *DamCreateAssetRequest
 }
 
 func (r ApiCreateAsset_0Request) Body(body DamCreateAssetRequest) ApiCreateAsset_0Request {
@@ -455,24 +628,25 @@ func (r ApiCreateAsset_0Request) Execute() (*DamAsset, *http.Response, error) {
 /*
 CreateAsset_0 Create Asset
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateAsset_0Request
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateAsset_0Request
 */
 func (a *BasicOperationsAPIService) CreateAsset_2(ctx context.Context) ApiCreateAsset_0Request {
 	return ApiCreateAsset_0Request{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DamAsset
+//
+//	@return DamAsset
 func (a *BasicOperationsAPIService) CreateAsset_2Execute(r ApiCreateAsset_0Request) (*DamAsset, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DamAsset
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DamAsset
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BasicOperationsAPIService.CreateAsset_2")
@@ -537,8 +711,8 @@ func (a *BasicOperationsAPIService) CreateAsset_2Execute(r ApiCreateAsset_0Reque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -548,18 +722,18 @@ func (a *BasicOperationsAPIService) CreateAsset_2Execute(r ApiCreateAsset_0Reque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -576,9 +750,9 @@ func (a *BasicOperationsAPIService) CreateAsset_2Execute(r ApiCreateAsset_0Reque
 }
 
 type ApiGetAssetByCodeRequest struct {
-	ctx context.Context
-	ApiService *BasicOperationsAPIService
-	body *DamGetAssetByCodeRequest
+	ctx        context.Context
+	ApiService BasicOperationsAPI
+	body       *DamGetAssetByCodeRequest
 }
 
 func (r ApiGetAssetByCodeRequest) Body(body DamGetAssetByCodeRequest) ApiGetAssetByCodeRequest {
@@ -593,24 +767,25 @@ func (r ApiGetAssetByCodeRequest) Execute() (*DamAsset, *http.Response, error) {
 /*
 GetAssetByCode Get Asset By Code
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAssetByCodeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetAssetByCodeRequest
 */
 func (a *BasicOperationsAPIService) GetAssetByCode(ctx context.Context) ApiGetAssetByCodeRequest {
 	return ApiGetAssetByCodeRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DamAsset
+//
+//	@return DamAsset
 func (a *BasicOperationsAPIService) GetAssetByCodeExecute(r ApiGetAssetByCodeRequest) (*DamAsset, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DamAsset
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DamAsset
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BasicOperationsAPIService.GetAssetByCode")
@@ -675,8 +850,8 @@ func (a *BasicOperationsAPIService) GetAssetByCodeExecute(r ApiGetAssetByCodeReq
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -686,18 +861,18 @@ func (a *BasicOperationsAPIService) GetAssetByCodeExecute(r ApiGetAssetByCodeReq
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -714,9 +889,9 @@ func (a *BasicOperationsAPIService) GetAssetByCodeExecute(r ApiGetAssetByCodeReq
 }
 
 type ApiGetAssetByCode_0Request struct {
-	ctx context.Context
-	ApiService *BasicOperationsAPIService
-	body *DamGetAssetByCodeRequest
+	ctx        context.Context
+	ApiService BasicOperationsAPI
+	body       *DamGetAssetByCodeRequest
 }
 
 func (r ApiGetAssetByCode_0Request) Body(body DamGetAssetByCodeRequest) ApiGetAssetByCode_0Request {
@@ -731,24 +906,25 @@ func (r ApiGetAssetByCode_0Request) Execute() (*DamAsset, *http.Response, error)
 /*
 GetAssetByCode_0 Get Asset By Code
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAssetByCode_0Request
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetAssetByCode_0Request
 */
 func (a *BasicOperationsAPIService) GetAssetByCode_3(ctx context.Context) ApiGetAssetByCode_0Request {
 	return ApiGetAssetByCode_0Request{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DamAsset
+//
+//	@return DamAsset
 func (a *BasicOperationsAPIService) GetAssetByCode_3Execute(r ApiGetAssetByCode_0Request) (*DamAsset, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DamAsset
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DamAsset
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BasicOperationsAPIService.GetAssetByCode_3")
@@ -813,8 +989,8 @@ func (a *BasicOperationsAPIService) GetAssetByCode_3Execute(r ApiGetAssetByCode_
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -824,18 +1000,18 @@ func (a *BasicOperationsAPIService) GetAssetByCode_3Execute(r ApiGetAssetByCode_
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -852,9 +1028,9 @@ func (a *BasicOperationsAPIService) GetAssetByCode_3Execute(r ApiGetAssetByCode_
 }
 
 type ApiListAssetsRequest struct {
-	ctx context.Context
-	ApiService *BasicOperationsAPIService
-	body *DamListAssetsRequest
+	ctx        context.Context
+	ApiService BasicOperationsAPI
+	body       *DamListAssetsRequest
 }
 
 func (r ApiListAssetsRequest) Body(body DamListAssetsRequest) ApiListAssetsRequest {
@@ -869,24 +1045,25 @@ func (r ApiListAssetsRequest) Execute() (*DamListAssetsResponse, *http.Response,
 /*
 ListAssets List Assets
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListAssetsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListAssetsRequest
 */
 func (a *BasicOperationsAPIService) ListAssets(ctx context.Context) ApiListAssetsRequest {
 	return ApiListAssetsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DamListAssetsResponse
+//
+//	@return DamListAssetsResponse
 func (a *BasicOperationsAPIService) ListAssetsExecute(r ApiListAssetsRequest) (*DamListAssetsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DamListAssetsResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DamListAssetsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BasicOperationsAPIService.ListAssets")
@@ -951,8 +1128,8 @@ func (a *BasicOperationsAPIService) ListAssetsExecute(r ApiListAssetsRequest) (*
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -962,18 +1139,18 @@ func (a *BasicOperationsAPIService) ListAssetsExecute(r ApiListAssetsRequest) (*
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -990,9 +1167,9 @@ func (a *BasicOperationsAPIService) ListAssetsExecute(r ApiListAssetsRequest) (*
 }
 
 type ApiListAssetsByCodesRequest struct {
-	ctx context.Context
-	ApiService *BasicOperationsAPIService
-	body *DamListAssetsByCodesRequest
+	ctx        context.Context
+	ApiService BasicOperationsAPI
+	body       *DamListAssetsByCodesRequest
 }
 
 func (r ApiListAssetsByCodesRequest) Body(body DamListAssetsByCodesRequest) ApiListAssetsByCodesRequest {
@@ -1007,24 +1184,25 @@ func (r ApiListAssetsByCodesRequest) Execute() (*DamListAssetsByCodesResponse, *
 /*
 ListAssetsByCodes List Assets By Codes
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListAssetsByCodesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListAssetsByCodesRequest
 */
 func (a *BasicOperationsAPIService) ListAssetsByCodes(ctx context.Context) ApiListAssetsByCodesRequest {
 	return ApiListAssetsByCodesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DamListAssetsByCodesResponse
+//
+//	@return DamListAssetsByCodesResponse
 func (a *BasicOperationsAPIService) ListAssetsByCodesExecute(r ApiListAssetsByCodesRequest) (*DamListAssetsByCodesResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DamListAssetsByCodesResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DamListAssetsByCodesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BasicOperationsAPIService.ListAssetsByCodes")
@@ -1089,8 +1267,8 @@ func (a *BasicOperationsAPIService) ListAssetsByCodesExecute(r ApiListAssetsByCo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1100,18 +1278,18 @@ func (a *BasicOperationsAPIService) ListAssetsByCodesExecute(r ApiListAssetsByCo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1128,9 +1306,9 @@ func (a *BasicOperationsAPIService) ListAssetsByCodesExecute(r ApiListAssetsByCo
 }
 
 type ApiListAssetsByCodes_0Request struct {
-	ctx context.Context
-	ApiService *BasicOperationsAPIService
-	body *DamListAssetsByCodesRequest
+	ctx        context.Context
+	ApiService BasicOperationsAPI
+	body       *DamListAssetsByCodesRequest
 }
 
 func (r ApiListAssetsByCodes_0Request) Body(body DamListAssetsByCodesRequest) ApiListAssetsByCodes_0Request {
@@ -1145,24 +1323,25 @@ func (r ApiListAssetsByCodes_0Request) Execute() (*DamListAssetsByCodesResponse,
 /*
 ListAssetsByCodes_0 List Assets By Codes
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListAssetsByCodes_0Request
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListAssetsByCodes_0Request
 */
 func (a *BasicOperationsAPIService) ListAssetsByCodes_4(ctx context.Context) ApiListAssetsByCodes_0Request {
 	return ApiListAssetsByCodes_0Request{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DamListAssetsByCodesResponse
+//
+//	@return DamListAssetsByCodesResponse
 func (a *BasicOperationsAPIService) ListAssetsByCodes_4Execute(r ApiListAssetsByCodes_0Request) (*DamListAssetsByCodesResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DamListAssetsByCodesResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DamListAssetsByCodesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BasicOperationsAPIService.ListAssetsByCodes_4")
@@ -1227,8 +1406,8 @@ func (a *BasicOperationsAPIService) ListAssetsByCodes_4Execute(r ApiListAssetsBy
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1238,18 +1417,18 @@ func (a *BasicOperationsAPIService) ListAssetsByCodes_4Execute(r ApiListAssetsBy
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1266,9 +1445,9 @@ func (a *BasicOperationsAPIService) ListAssetsByCodes_4Execute(r ApiListAssetsBy
 }
 
 type ApiListAssetsByIdsRequest struct {
-	ctx context.Context
-	ApiService *BasicOperationsAPIService
-	body *DamListAssetsByIdsRequest
+	ctx        context.Context
+	ApiService BasicOperationsAPI
+	body       *DamListAssetsByIdsRequest
 }
 
 func (r ApiListAssetsByIdsRequest) Body(body DamListAssetsByIdsRequest) ApiListAssetsByIdsRequest {
@@ -1283,24 +1462,25 @@ func (r ApiListAssetsByIdsRequest) Execute() (*DamListAssetsByIdsResponse, *http
 /*
 ListAssetsByIds List Assets By Ids
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListAssetsByIdsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListAssetsByIdsRequest
 */
 func (a *BasicOperationsAPIService) ListAssetsByIds(ctx context.Context) ApiListAssetsByIdsRequest {
 	return ApiListAssetsByIdsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DamListAssetsByIdsResponse
+//
+//	@return DamListAssetsByIdsResponse
 func (a *BasicOperationsAPIService) ListAssetsByIdsExecute(r ApiListAssetsByIdsRequest) (*DamListAssetsByIdsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DamListAssetsByIdsResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DamListAssetsByIdsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BasicOperationsAPIService.ListAssetsByIds")
@@ -1365,8 +1545,8 @@ func (a *BasicOperationsAPIService) ListAssetsByIdsExecute(r ApiListAssetsByIdsR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1376,18 +1556,18 @@ func (a *BasicOperationsAPIService) ListAssetsByIdsExecute(r ApiListAssetsByIdsR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1404,9 +1584,9 @@ func (a *BasicOperationsAPIService) ListAssetsByIdsExecute(r ApiListAssetsByIdsR
 }
 
 type ApiListAssetsByIds_0Request struct {
-	ctx context.Context
-	ApiService *BasicOperationsAPIService
-	body *DamListAssetsByIdsRequest
+	ctx        context.Context
+	ApiService BasicOperationsAPI
+	body       *DamListAssetsByIdsRequest
 }
 
 func (r ApiListAssetsByIds_0Request) Body(body DamListAssetsByIdsRequest) ApiListAssetsByIds_0Request {
@@ -1421,24 +1601,25 @@ func (r ApiListAssetsByIds_0Request) Execute() (*DamListAssetsByIdsResponse, *ht
 /*
 ListAssetsByIds_0 List Assets By Ids
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListAssetsByIds_0Request
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListAssetsByIds_0Request
 */
 func (a *BasicOperationsAPIService) ListAssetsByIds_5(ctx context.Context) ApiListAssetsByIds_0Request {
 	return ApiListAssetsByIds_0Request{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DamListAssetsByIdsResponse
+//
+//	@return DamListAssetsByIdsResponse
 func (a *BasicOperationsAPIService) ListAssetsByIds_5Execute(r ApiListAssetsByIds_0Request) (*DamListAssetsByIdsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DamListAssetsByIdsResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DamListAssetsByIdsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BasicOperationsAPIService.ListAssetsByIds_5")
@@ -1503,8 +1684,8 @@ func (a *BasicOperationsAPIService) ListAssetsByIds_5Execute(r ApiListAssetsById
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1514,18 +1695,18 @@ func (a *BasicOperationsAPIService) ListAssetsByIds_5Execute(r ApiListAssetsById
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1542,9 +1723,9 @@ func (a *BasicOperationsAPIService) ListAssetsByIds_5Execute(r ApiListAssetsById
 }
 
 type ApiListAssets_0Request struct {
-	ctx context.Context
-	ApiService *BasicOperationsAPIService
-	body *DamListAssetsRequest
+	ctx        context.Context
+	ApiService BasicOperationsAPI
+	body       *DamListAssetsRequest
 }
 
 func (r ApiListAssets_0Request) Body(body DamListAssetsRequest) ApiListAssets_0Request {
@@ -1559,24 +1740,25 @@ func (r ApiListAssets_0Request) Execute() (*DamListAssetsResponse, *http.Respons
 /*
 ListAssets_0 List Assets
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListAssets_0Request
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListAssets_0Request
 */
 func (a *BasicOperationsAPIService) ListAssets_6(ctx context.Context) ApiListAssets_0Request {
 	return ApiListAssets_0Request{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DamListAssetsResponse
+//
+//	@return DamListAssetsResponse
 func (a *BasicOperationsAPIService) ListAssets_6Execute(r ApiListAssets_0Request) (*DamListAssetsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DamListAssetsResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DamListAssetsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BasicOperationsAPIService.ListAssets_6")
@@ -1641,8 +1823,8 @@ func (a *BasicOperationsAPIService) ListAssets_6Execute(r ApiListAssets_0Request
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1652,18 +1834,18 @@ func (a *BasicOperationsAPIService) ListAssets_6Execute(r ApiListAssets_0Request
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1680,9 +1862,9 @@ func (a *BasicOperationsAPIService) ListAssets_6Execute(r ApiListAssets_0Request
 }
 
 type ApiUpdateAssetRequest struct {
-	ctx context.Context
-	ApiService *BasicOperationsAPIService
-	body *DamUpdateAssetRequest
+	ctx        context.Context
+	ApiService BasicOperationsAPI
+	body       *DamUpdateAssetRequest
 }
 
 func (r ApiUpdateAssetRequest) Body(body DamUpdateAssetRequest) ApiUpdateAssetRequest {
@@ -1697,24 +1879,25 @@ func (r ApiUpdateAssetRequest) Execute() (*DamAsset, *http.Response, error) {
 /*
 UpdateAsset Update Asset
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateAssetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUpdateAssetRequest
 */
 func (a *BasicOperationsAPIService) UpdateAsset(ctx context.Context) ApiUpdateAssetRequest {
 	return ApiUpdateAssetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DamAsset
+//
+//	@return DamAsset
 func (a *BasicOperationsAPIService) UpdateAssetExecute(r ApiUpdateAssetRequest) (*DamAsset, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DamAsset
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DamAsset
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BasicOperationsAPIService.UpdateAsset")
@@ -1779,8 +1962,8 @@ func (a *BasicOperationsAPIService) UpdateAssetExecute(r ApiUpdateAssetRequest) 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1790,18 +1973,18 @@ func (a *BasicOperationsAPIService) UpdateAssetExecute(r ApiUpdateAssetRequest) 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1818,9 +2001,9 @@ func (a *BasicOperationsAPIService) UpdateAssetExecute(r ApiUpdateAssetRequest) 
 }
 
 type ApiUpdateAsset_0Request struct {
-	ctx context.Context
-	ApiService *BasicOperationsAPIService
-	body *DamUpdateAssetRequest
+	ctx        context.Context
+	ApiService BasicOperationsAPI
+	body       *DamUpdateAssetRequest
 }
 
 func (r ApiUpdateAsset_0Request) Body(body DamUpdateAssetRequest) ApiUpdateAsset_0Request {
@@ -1835,24 +2018,25 @@ func (r ApiUpdateAsset_0Request) Execute() (*DamAsset, *http.Response, error) {
 /*
 UpdateAsset_0 Update Asset
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateAsset_0Request
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUpdateAsset_0Request
 */
 func (a *BasicOperationsAPIService) UpdateAsset_7(ctx context.Context) ApiUpdateAsset_0Request {
 	return ApiUpdateAsset_0Request{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DamAsset
+//
+//	@return DamAsset
 func (a *BasicOperationsAPIService) UpdateAsset_7Execute(r ApiUpdateAsset_0Request) (*DamAsset, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DamAsset
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DamAsset
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BasicOperationsAPIService.UpdateAsset_7")
@@ -1917,8 +2101,8 @@ func (a *BasicOperationsAPIService) UpdateAsset_7Execute(r ApiUpdateAsset_0Reque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1928,18 +2112,18 @@ func (a *BasicOperationsAPIService) UpdateAsset_7Execute(r ApiUpdateAsset_0Reque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v RpcStatus
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v RpcStatus
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

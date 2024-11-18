@@ -20,7 +20,7 @@ var _ MappedNullable = &DamBatchUploadAssetsResponse{}
 
 // DamBatchUploadAssetsResponse struct for DamBatchUploadAssetsResponse
 type DamBatchUploadAssetsResponse struct {
-	PreSignedUrls []string `json:"preSignedUrls,omitempty"`
+	PreSignedUrls        []string `json:"preSignedUrls,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *DamBatchUploadAssetsResponse) SetPreSignedUrls(v []string) {
 }
 
 func (o DamBatchUploadAssetsResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -119,22 +119,24 @@ func (o *DamBatchUploadAssetsResponse) UnmarshalJSON(data []byte) (err error) {
 
 // GetValue returns the value of well-known types
 func (o *DamBatchUploadAssetsResponse) GetValue() interface{} {
-	if o == nil || IsNil(o.Type) || IsNil(o.AdditionalProperties) {
+	if o == nil || IsNil(o.AdditionalProperties) {
 		return nil
 	}
 	return o.AdditionalProperties["value"]
 }
-// SetValue populate the value of well-known types
+
+// SetValue populates the value of well-known types
 func (o *DamBatchUploadAssetsResponse) SetValue(value interface{}) {
-	if o == nil || IsNil(o.Type) || IsNil(value) {
+	if o == nil || IsNil(value) {
 		return
 	}
-    if IsNil(o.AdditionalProperties) {
-        o.AdditionalProperties = map[string]interface{}{}
-    }
+	if IsNil(o.AdditionalProperties) {
+		o.AdditionalProperties = map[string]interface{}{}
+	}
 	o.AdditionalProperties["value"] = value
 	return
 }
+
 type NullableDamBatchUploadAssetsResponse struct {
 	value *DamBatchUploadAssetsResponse
 	isSet bool
@@ -170,5 +172,3 @@ func (v *NullableDamBatchUploadAssetsResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

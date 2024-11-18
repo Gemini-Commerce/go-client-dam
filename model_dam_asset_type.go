@@ -21,11 +21,11 @@ type DamAssetType string
 
 // List of damAssetType
 const (
-	DAMASSETTYPE_UNKNOWN DamAssetType = "UNKNOWN"
-	DAMASSETTYPE_IMAGE DamAssetType = "IMAGE"
-	DAMASSETTYPE_VIDEO DamAssetType = "VIDEO"
+	DAMASSETTYPE_UNKNOWN        DamAssetType = "UNKNOWN"
+	DAMASSETTYPE_IMAGE          DamAssetType = "IMAGE"
+	DAMASSETTYPE_VIDEO          DamAssetType = "VIDEO"
 	DAMASSETTYPE_VIDEO_EXTERNAL DamAssetType = "VIDEO_EXTERNAL"
-	DAMASSETTYPE_APPLICATION DamAssetType = "APPLICATION"
+	DAMASSETTYPE_APPLICATION    DamAssetType = "APPLICATION"
 )
 
 // All allowed values of DamAssetType enum
@@ -115,4 +115,3 @@ func (v *NullableDamAssetType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

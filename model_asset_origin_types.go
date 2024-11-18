@@ -22,7 +22,7 @@ type AssetOriginTypes string
 // List of AssetOriginTypes
 const (
 	ASSETORIGINTYPES_EXTERNAL AssetOriginTypes = "EXTERNAL"
-	ASSETORIGINTYPES_S3 AssetOriginTypes = "S3"
+	ASSETORIGINTYPES_S3       AssetOriginTypes = "S3"
 )
 
 // All allowed values of AssetOriginTypes enum
@@ -109,4 +109,3 @@ func (v *NullableAssetOriginTypes) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
